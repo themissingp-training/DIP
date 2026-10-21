@@ -93,7 +93,9 @@ h1 .thin,h2 .thin{font-weight:500;display:block;font-size:.5em;letter-spacing:.0
 .screen::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(16,35,70,.75));pointer-events:none}
 .screen .cap{position:absolute;left:16px;right:16px;bottom:14px;z-index:1;color:#fff}
 .screen .cap b{display:block;font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(18px,2.2vw,24px);line-height:1}
-.screen .cap span{font-size:13px;opacity:.85}
+.screen .cap span{font-size:13px;opacity:.9;display:block;margin-top:4px}
+.screen .cap em{display:block;margin-top:8px;font-family:var(--hand);font-style:normal;font-size:clamp(18px,1.9vw,22px);line-height:1.15;color:var(--amber);max-width:40ch}
+.screen::after{background:linear-gradient(180deg,transparent 30%,rgba(16,35,70,.85))}
 .tag{position:absolute;top:12px;left:14px;z-index:1;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-deep);background:var(--amber-soft);border:1px solid #f3d793;padding:4px 8px;border-radius:5px}
 .reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
 .reel{position:relative;aspect-ratio:4/5;border-radius:10px;overflow:hidden;cursor:pointer;border:0;padding:0;background:var(--blue-deep);color:#fff;text-align:left;box-shadow:0 12px 26px -14px rgba(31,78,140,.6);transition:transform .25s}
@@ -248,6 +250,12 @@ h1 .thin,h2 .thin{font-weight:500;display:block;font-size:.5em;letter-spacing:.0
 .yt b{display:block;font-size:15px;line-height:1.25}
 .yt small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
 .yt em{font-style:normal;font-size:12px;font-weight:600;color:var(--blue);margin-top:auto}
+.feature{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(16px,3vw,32px);align-items:center;margin-top:32px;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:clamp(12px,2vw,20px)}
+.feature-vid video{width:100%;aspect-ratio:16/9;border-radius:16px;background:#000;display:block;object-fit:cover}
+.feature-txt h3{font:900 clamp(34px,4vw,52px)/.9 var(--display);text-transform:uppercase;margin:8px 0 0;color:var(--blue-deep)}
+.feature-txt .who{margin:6px 0 0;font-size:14px;font-weight:600;color:var(--muted)}
+.feature-txt p{margin:12px 0 0;color:var(--muted);max-width:44ch}
+@media (max-width:900px){.feature{grid-template-columns:1fr}}
 /* ---------- 07 online ---------- */
 .online{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:32px;align-items:stretch}
 .course{background:var(--blue-deep);color:#fff;border-radius:24px;padding:clamp(20px,3vw,32px);position:relative;overflow:hidden}
@@ -373,9 +381,9 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
       <div class="rig" aria-label="Intro and videos">
         <div class="rod" aria-hidden="true"></div>
         <div class="screen">
-          <span class="tag">Intro video coming soon</span>
+          <span class="tag">Meet your trainer</span>
           <img src="img/usman-stage.jpg" alt="Usman Gulzari presenting to a corporate group">
-          <div class="cap"><b>Why first impressions decide the room</b><span>Usman Gulzari · Lead Trainer</span></div>
+          <div class="cap"><b>Usman Gulzari</b><span>Lead Trainer &amp; public speaking coach · 14 years · 2,000+ trainings · 125+ organizations</span><em>"Most people don't lose the room because of their content. They lose it in the first 30 seconds."</em></div>
         </div>
         <div class="reels">
           <button class="reel" type="button" data-video="vid/agtl-bilal.mp4" data-cap="Muhammad Bilal, Head of HR at AGTL · Together We Rise workshop"><img src="img/agtl-poster.jpg" alt="" loading="lazy"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Muhammad Bilal</b><span>Head of HR · AGTL</span></span></button>
@@ -522,6 +530,15 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
   <section class="scene" id="s-voices" data-name="voices">
     <div class="bill">Voices</div>
     <h2><span class="thin">In their own words</span>What participants <span class="hi">say</span></h2>
+    <div class="feature">
+      <div class="feature-vid"><video src="vid/momina.mp4" poster="img/momina.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="feature-txt">
+        <div class="bill">Featured testimonial</div>
+        <h3>Momina</h3>
+        <p class="who">Participant · The Nitty-Gritty of Public Speaking</p>
+        <p>Hear it in her own words: what changed after two days of practice with the PODIUM method, recorded right after the workshop.</p>
+      </div>
+    </div>
     <div class="voices">
       <div>
         <div class="vwall">
