@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Client Link Maker · The Missing P</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#f6f8fc;--paper:#fff;--ink:#16233b;--muted:#5a6a85;--line:#dde5f2;--blue:#3d79c4;--blue-deep:#1f4e8c;--blue-soft:#e6eefa;--amber:#f6b01e;--amber-soft:#fff2d3;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;padding:32px 16px 64px}
+.wrap{max-width:860px;margin:0 auto}
+.top{display:flex;align-items:center;gap:10px}
+.top img{width:40px;height:40px;object-fit:contain}
+.top b{font-size:15px}.top small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h1{font:900 clamp(40px,7vw,64px)/.9 "Big Shoulders Display",Impact,sans-serif;text-transform:uppercase;margin:28px 0 8px}
+h1 span{color:var(--blue)}
+.lede{color:var(--muted);margin:0 0 24px;max-width:60ch}
+form,.out{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:clamp(18px,3vw,28px)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.full{grid-column:1/-1}
+label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
+label em{font-style:normal;font-weight:400;color:var(--muted)}
+input{width:100%;font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:#fbfcfe;color:var(--ink)}
+input:focus{outline:2px solid var(--blue);outline-offset:1px;background:#fff}
+h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:22px 0 10px}
+.hint{font-size:13px;color:var(--muted);margin:-4px 0 10px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+button,.btn{font:600 15px Figtree,sans-serif;border-radius:999px;padding:12px 20px;cursor:pointer;border:1px solid var(--blue);background:var(--blue);color:#fff;text-decoration:none;display:inline-flex;align-items:center}
+.ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+.out{margin-top:18px;border-color:#f3d793;background:var(--amber-soft)}
+.out h3{margin:0 0 10px;font-size:18px}
+.link{font-size:14px;word-break:break-all;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}
+textarea{width:100%;min-height:300px;font:14px/1.55 Figtree,sans-serif;padding:12px;border:1px solid var(--line);border-radius:10px;margin-top:6px;color:var(--ink)}
+.ok{font-size:13px;color:var(--blue-deep);font-weight:600;margin-left:6px;align-self:center}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><img src="img/tmp-logo.png" alt=""><div><b>The Missing P</b><small>Internal tool</small></div></div>
+  <h1>Client <span>link maker</span></h1>
+  <p class="lede">Fill this in after a client meeting. You get a personal link to the Delivering Impactful Presentations page with the client's name and challenges on it, plus a ready follow-up email.</p>
+
+  <form id="f" autocomplete="off">
+    <div class="grid">
+      <div><label for="company">Company name *</label><input id="company" required placeholder="e.g. K-Electric"></div>
+      <div><label for="contact">Contact person <em>(optional)</em></label><input id="contact" placeholder="e.g. Ms. Sana Ahmed"></div>
+      <div><label for="date">Meeting date <em>(optional)</em></label><input id="date" placeholder="e.g. 14 October 2026"></div>
+      <div><label for="sender">Your name <em>(for the email)</em></label><input id="sender" value="Aniqa"></div>
+    </div>
+
+    <h2>Challenges they mentioned</h2>
+    <p class="hint">Write them the way the client said them. Leave empty to show our general examples.</p>
+    <div class="grid">
+      <div class="full"><label for="c1">Challenge 1</label><input id="c1" placeholder="e.g. Managers struggle to present data to leadership"></div>
+      <div class="full"><label for="c2">Challenge 2</label><input id="c2" placeholder="e.g. Team freezes in client Q&A"></div>
+      <div class="full"><label for="c3">Challenge 3</label><input id="c3" placeholder="e.g. Presentations run long with no clear ask"></div>
+    </div>
+
+    <h2>How we'll help <em style="text-transform:none;letter-spacing:0;color:var(--muted);font-weight:400">(optional)</em></h2>
+    <p class="hint">One line per challenge. Leave empty to keep our standard three lines.</p>
+    <div class="grid">
+      <div class="full"><label for="t1">Solution 1</label><input id="t1" placeholder="e.g. Turn numbers into a short story leadership can act on"></div>
+      <div class="full"><label for="t2">Solution 2</label><input id="t2" placeholder="e.g. Impromptu drills built on real client questions"></div>
+      <div class="full"><label for="t3">Solution 3</label><input id="t3" placeholder="e.g. One clear message and a clear ask in every presentation"></div>
+    </div>
+
+    <div class="btns"><button type="submit">Create link</button><button type="reset" class="ghost">Clear</button></div>
+  </form>
+
+  <div class="out" id="out" hidden>
+    <h3>Link for <span id="oName"></span></h3>
+    <div class="link" id="oLink"></div>
+    <div class="btns">
+      <button type="button" id="copyLink">Copy link</button>
+      <a class="btn ghost" id="openLink" href="#" target="_blank" rel="noopener">Open and check</a>
+      <span class="ok" id="okLink"></span>
+    </div>
+    <h2>Ready follow-up email</h2>
+    <textarea id="oMail" aria-label="Follow-up email"></textarea>
+    <div class="btns"><button type="button" id="copyMail">Copy email</button><span class="ok" id="okMail"></span></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var base=location.href.replace(/[?#].*$/,'').replace(/make\.html$/,'');
+  function val(id){return $(id).value.trim();}
+  function copy(text,okEl){
+    function done(){ okEl.textContent='Copied'; setTimeout(function(){okEl.textContent='';},2000); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done,function(){ fallback(); }); } else fallback();
+    function fallback(){ var t=document.createElement('textarea'); t.value=text; document.body.appendChild(t); t.select(); try{document.execCommand('copy'); done();}catch(e){ okEl.textContent='Select and copy manually'; } t.remove(); }
+  }
+  $('f').addEventListener('submit',function(e){
+    e.preventDefault();
+    var co=val('company'); if(!co){ $('company').focus(); return; }
+    var q=new URLSearchParams();
+    ['company','contact','date','c1','c2','c3','t1','t2','t3'].forEach(function(k){ var v=val(k); if(v) q.set(k,v); });
+    var link=base+'?'+q.toString();
+    $('oName').textContent=co; $('oLink').textContent=link; $('openLink').href=link;
+    var who=val('contact')||'[Name]';
+    var ch=['c1','c2','c3'].map(val), so=['t1','t2','t3'].map(val);
+    var defs=['Your team will learn to share one clear message and get to the point quickly.','They will practise answering tough questions on the spot with confidence.','They will learn how to open strong and stay calm in front of senior audiences.'];
+    var bullets=ch.map(function(c,i){ return c?('• '+c+': '+(so[i]||defs[i])):''; }).filter(Boolean).join('\n\n');
+    var mail='Subject: Thank you for meeting with Sir Usman\n\nDear '+who+',\n\nThank you for your time with Sir Usman Gulzari'+(val('date')?' on '+val('date'):'')+'. It was a great meeting, and we really enjoyed learning about your team at '+co+'.\n\n'+
+      (bullets?('In the meeting, you shared a few areas where you\'d like your team to improve. Here is how our training helps with each one:\n\n'+bullets+'\n\n'):'')+
+      'We\'ve put together a short overview of our Delivering Impactful Presentations program, prepared for '+co+', so you can see what it covers and the results it has delivered:\n\n👉 '+link+'\n\nIn short:\n• 53% average improvement in participant scores in two days\n• 4.52 out of 5 rating from participants\n• Trusted by 125+ organizations, including Engro, Unilever and Faysal Bank\n\nIf this looks useful for your team, just reply to this email and we can plan the next step together.\n\nThank you once again.\n\nWarm regards,\n'+(val('sender')||'Aniqa')+'\nThe Missing P';
+    $('oMail').value=mail;
+    $('out').hidden=false; $('out').scrollIntoView({behavior:'smooth'});
+  });
+  $('f').addEventListener('reset',function(){ $('out').hidden=true; });
+  $('copyLink').addEventListener('click',function(){ copy($('oLink').textContent,$('okLink')); });
+  $('copyMail').addEventListener('click',function(){ copy($('oMail').value,$('okMail')); });
+})();
+</script>
+</body>
+</html>

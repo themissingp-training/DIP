@@ -256,6 +256,8 @@ h1 .thin,h2 .thin{font-weight:500;display:block;font-size:.5em;letter-spacing:.0
 .feature-txt .who{margin:6px 0 0;font-size:14px;font-weight:600;color:var(--muted)}
 .feature-txt p{margin:12px 0 0;color:var(--muted);max-width:44ch}
 @media (max-width:900px){.feature{grid-template-columns:1fr}}
+.for-banner{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--blue-deep);background:var(--amber-soft);border:1px solid #f3d793;border-radius:999px;padding:6px 14px;margin-bottom:14px}
+.for-banner b{color:var(--ink)}
 /* ---------- 07 online ---------- */
 .online{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:32px;align-items:stretch}
 .course{background:var(--blue-deep);color:#fff;border-radius:24px;padding:clamp(20px,3vw,32px);position:relative;overflow:hidden}
@@ -367,7 +369,8 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
   <section class="scene active" id="s-overview" data-name="overview">
     <div class="hero">
       <div>
-        <div class="bill rise">The Missing P presents · Two-day workshop</div>
+        <div class="for-banner" id="forBanner" hidden>Prepared for <b id="forName"></b></div>
+      <div class="bill rise">The Missing P presents · Two-day workshop</div>
         <h1 class="rise"><span class="thin">Delivering</span><span class="hi">Impactful</span> Presentations</h1>
         <p class="lede rise">Most people know their content. They lose the room in the <strong>first 30 seconds</strong>. This workshop trains your team to speak with <strong>confidence, clarity and poise</strong>, from the first line to the last slide.</p>
         <div class="note rise">a peek inside the room
@@ -542,12 +545,14 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
     <div class="voices">
       <div>
         <div class="vwall">
+          <button class="reel" type="button" data-video="vid/qazi-ishaq.mp4" data-cap="Qazi Ishaq, One Network · The Nitty-Gritty of Public Speaking"><img src="img/qazi-ishaq.jpg" alt="" loading="lazy" style="object-position:22% 50%"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Qazi Ishaq</b><span>One Network</span></span></button>
+          <button class="reel" type="button" data-video="vid/faysal-4.mp4" data-cap="Faysal Bank Limited · The Nitty-Gritty of Public Speaking"><img src="img/faysal-4.jpg" alt="" loading="lazy" style="object-position:30% 50%"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Faysal Bank</b><span>Workshop participant</span></span></button>
           <button class="reel" type="button" data-video="vid/faysal-1.mp4" data-cap="Branch, Operations and Cluster Manager · Faysal Bank Limited · The Nitty-Gritty of Public Speaking"><img src="img/faysal-1.jpg" alt="" loading="lazy"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Faysal Bank</b><span>Branch & cluster manager</span></span></button>
           <button class="reel" type="button" data-video="vid/faysal-2.mp4" data-cap="Branch, Operations and Cluster Manager · Faysal Bank Limited · The Nitty-Gritty of Public Speaking"><img src="img/faysal-2.jpg" alt="" loading="lazy"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Faysal Bank</b><span>Branch & cluster manager</span></span></button>
           <button class="reel" type="button" data-video="vid/faysal-3.mp4" data-cap="Branch, Operations and Cluster Manager · Faysal Bank Limited · The Nitty-Gritty of Public Speaking"><img src="img/faysal-3.jpg" alt="" loading="lazy"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Faysal Bank</b><span>Branch & cluster manager</span></span></button>
           <button class="reel" type="button" data-video="vid/agtl-bilal.mp4" data-cap="Muhammad Bilal, Head of HR at AGTL · Together We Rise workshop"><img src="img/agtl-poster.jpg" alt="" loading="lazy"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Muhammad Bilal</b><span>Head of HR · AGTL</span></span></button>
         </div>
-        <p class="vid-cap">Faysal Bank's branch, operations and cluster managers after <em>The Nitty-Gritty of Public Speaking</em>. Tap any video to play.</p>
+        <p class="vid-cap">Participants from One Network, Faysal Bank and AGTL after their workshops with Usman Gulzari. Tap any video to play.</p>
       </div>
       <div class="qgrid">
         <article class="q wide"><p>His expertise, dedication and exceptional training techniques have left an indelible mark on the participants, making a significant positive impact on their communication skills and personal growth. He effortlessly conveyed complex ideas in a clear and concise manner.</p><footer><b>Hassan Muhammad Sandhu</b>HR Business Partner · on the Effective Communication and Present to Win program</footer></article>
@@ -602,23 +607,23 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
     <h2><span class="thin">Built around what you told us</span>Prepared for <span class="hi">you</span></h2>
     <div class="prep">
       <div class="prep-top">
-        <div><small>Prepared for</small><h3><span class="fill" style="background:none;border-color:#f6b01e">[Company name]</span></h3></div>
-        <div class="when">Following our meeting on <span class="fill" style="background:rgba(255,255,255,.15);border-color:#f6b01e">[date]</span></div>
+        <div><small>Prepared for</small><h3 id="pCompany">Your team</h3></div>
+        <div class="when" id="pWhen">A two-day workshop, tailored to your people</div>
       </div>
       <div class="prep-body">
         <section>
-          <h4>What you shared with us</h4>
-          <ul>
-            <li><span>Challenge 1 from the meeting, e.g. <span class="fill">managers struggle to present data to leadership</span></span></li>
-            <li><span>Challenge 2, e.g. <span class="fill">team freezes in client Q&amp;A</span></span></li>
-            <li><span>Challenge 3, e.g. <span class="fill">presentations run long with no clear ask</span></span></li>
+          <h4 id="pShareHead">Challenges teams often bring to us</h4>
+          <ul id="pChallenges">
+            <li><span>Managers struggle to present data clearly to senior leadership</span></li>
+            <li><span>People freeze in Q&amp;A or when asked to speak on the spot</span></li>
+            <li><span>Presentations run long and end without a clear ask</span></li>
           </ul>
         </section>
         <section>
           <h4>How we'll tailor the workshop</h4>
-          <ul>
+          <ul id="pTailor">
             <li><span>Extra time on <b>Develop your message</b> with your own reports as practice material</span></li>
-            <li><span>Impromptu drills built around <b>real client questions</b> your team faces</span></li>
+            <li><span>Impromptu drills built around <b>real questions</b> your team faces</span></li>
             <li><span>Final presentations on <b>topics from your business</b>, recorded for review</span></li>
           </ul>
         </section>
@@ -759,6 +764,23 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
   }); });
   var rv=document.getElementById('roomVid');
   rv.addEventListener('click',function(){ rv.muted=!rv.muted; rv.play().catch(function(){}); });
+
+
+  /* ---- personalised link: ?company=&contact=&date=&c1=&c2=&c3=&t1=&t2=&t3= ---- */
+  (function(){
+    var q; try{ q=new URLSearchParams(location.search); }catch(e){ return; }
+    var co=(q.get('company')||'').trim(); if(!co) return;
+    var who=(q.get('contact')||'').trim(), dt=(q.get('date')||'').trim();
+    document.getElementById('pCompany').textContent=co;
+    document.getElementById('forName').textContent=co+(who?' · '+who:'');
+    document.getElementById('forBanner').hidden=false;
+    document.title='Delivering Impactful Presentations · for '+co;
+    document.getElementById('pWhen').textContent=dt?('Following our meeting on '+dt+(who?' with '+who:'')):(who?'Prepared for '+who:'Following our recent meeting');
+    function fill(id,keys){ var v=keys.map(function(k){return (q.get(k)||'').trim();}).filter(Boolean); if(!v.length) return false;
+      var ul=document.getElementById(id); ul.innerHTML=''; v.forEach(function(t){ var li=document.createElement('li'), sp=document.createElement('span'); sp.textContent=t; li.appendChild(sp); ul.appendChild(li); }); return true; }
+    if(fill('pChallenges',['c1','c2','c3'])) document.getElementById('pShareHead').textContent='What you shared with us';
+    fill('pTailor',['t1','t2','t3']);
+  })();
 
   /* ---- placeholders ---- */
   document.querySelectorAll('.js-udemy').forEach(function(a){ a.addEventListener('click',function(e){ if(a.getAttribute('href')==='#'){ e.preventDefault(); a.textContent='Udemy link coming soon'; } }); });
