@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<style>[hidden]{display:none!important}</style>
+<title>Ascending Together Templates</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@500;700;800&family=Barlow:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Kalam:wght@400;700&family=Work+Sans:wght@400;500;600&family=Unbounded:wght@400;700;900&family=Outfit:wght@400;500;600;700&family=Bowlby+One&family=DM+Sans:wght@400;500;700&family=Gloock&family=Manrope:wght@400;500;700&family=Caveat:wght@600&display=swap">
+<style>
+/* Three directions for the "Ascending Together" retreat page, switchable from the top bar.
+   A Basecamp: sky, forest and sunrise; the day is a trail up a mountain.
+   B Camp Poster: loud sticker-and-polaroid playfulness; activities are flip cards.
+   C Bonfire Night: dusk-to-night warmth, rising sparks, string lights; the day runs from sunrise to bonfire.
+   D Field Day: a sports day on the grass; a live scoreboard for Team Toofan, Bijli and Aag.
+   E Postcards: an air-mail travel journal; each past retreat is a postcard that flips to a message. */
+:root{color-scheme:light;--ui:#14182b;--ui-soft:#f2f3f7}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#14182b;font:16px/1.55 Outfit,system-ui,sans-serif;overflow-x:hidden}
+button{font:inherit;color:inherit}
+img,video{display:block;max-width:100%}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.switch{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;display:flex;justify-content:center;padding:10px 16px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e6e8ef}
+.switch div{display:flex;gap:4px;padding:4px;border-radius:12px;background:var(--ui-soft);overflow-x:auto;max-width:100%}
+.switch button{flex:0 0 auto;border:0;background:none;padding:8px 14px;border-radius:9px;cursor:pointer;font:600 13px Outfit,sans-serif;color:#5b6070;white-space:nowrap}
+.switch button span{font-weight:400;margin-left:4px}
+.switch button[aria-pressed="true"]{background:#fff;color:var(--ui);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.opt{padding-inline:clamp(16px,5vw,64px);padding-block:0 64px}
+.wrap{max-width:1180px;margin:0 auto}
+.ph{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+
+/* ================= A · BASECAMP ================= */
+#A{--sky:#e7f3f6;--forest:#1e4d3b;--pine:#2f6b52;--sun:#ff7a3d;--sun-soft:#ffe3d3;--ink:#14261f;--muted:#4f6159;background:linear-gradient(180deg,var(--sky) 0%,#f5fafb 60%,#fff 100%);color:var(--ink);font-family:Outfit,sans-serif;position:relative;overflow:hidden}
+#A .top{display:flex;justify-content:space-between;align-items:center;padding-top:22px;font-weight:600;font-size:14px}
+#A .top i{font-style:normal;color:var(--sun)}
+#A .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;padding-top:clamp(32px,5vw,64px);position:relative;z-index:2}
+#A .kick{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:600;color:var(--forest);background:#fff;border-radius:999px;padding:6px 14px;box-shadow:0 2px 10px rgba(30,77,59,.1)}
+#A .kick b{width:8px;height:8px;border-radius:50%;background:var(--sun)}
+#A h1{font:900 clamp(46px,7.4vw,96px)/.92 Unbounded,sans-serif;letter-spacing:-.03em;margin:18px 0 0;text-wrap:balance}
+#A h1 span{color:var(--sun)}
+#A .lede{max-width:46ch;color:var(--muted);font-size:18px;margin:18px 0 0}
+#A .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+#A .btn{border-radius:14px;padding:13px 20px;font-weight:700;cursor:pointer;border:0;background:var(--forest);color:#fff}
+#A .btn.alt{background:#fff;color:var(--forest);box-shadow:inset 0 0 0 2px var(--forest)}
+#A .window{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:16/10;box-shadow:0 30px 60px -25px rgba(30,77,59,.5);border:6px solid #fff}
+#A .window video{width:100%;height:100%;object-fit:cover}
+#A .window .ph{position:absolute;left:14px;top:14px;background:#fff;color:var(--forest);padding:5px 9px;border-radius:6px}
+#A .badge{position:absolute;right:-10px;bottom:-14px;background:var(--sun);color:#fff;border-radius:50%;width:116px;height:116px;display:grid;place-items:center;text-align:center;font:700 13px/1.15 Outfit,sans-serif;transform:rotate(-10deg);box-shadow:0 12px 30px -8px rgba(255,122,61,.7)}
+#A .badge b{display:block;font:900 30px Unbounded,sans-serif}
+#A .ridges{position:relative;height:clamp(120px,16vw,200px);margin-top:-30px;z-index:1}
+#A .ridges svg{position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:max(1400px,140%);height:100%}
+#A .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;background:var(--forest);color:#fff;border-radius:24px;padding:22px;margin-top:-36px;position:relative;z-index:3}
+#A .stats div{padding:6px 8px}
+#A .stats b{display:block;font:900 clamp(26px,3.6vw,40px)/1 Unbounded,sans-serif;color:var(--sun-soft)}
+#A .stats span{font-size:13px;opacity:.85}
+#A h2{font:900 clamp(30px,4.4vw,52px)/1 Unbounded,sans-serif;letter-spacing:-.02em;margin:64px 0 6px}
+#A .sub{color:var(--muted);margin:0 0 18px}
+#A .trailbox{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;align-items:center}
+#A .trail{position:relative;aspect-ratio:10/8;background:linear-gradient(180deg,#d9eef2,#eef7f4);border-radius:24px;overflow:hidden}
+#A .trail svg{position:absolute;inset:0;width:100%;height:100%}
+#A .cp{position:absolute;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;border:3px solid #fff;background:var(--pine);color:#fff;font:700 15px Unbounded,sans-serif;cursor:pointer;box-shadow:0 6px 16px rgba(30,77,59,.35);transition:transform .2s,background .2s}
+#A .cp:hover{transform:translate(-50%,-50%) scale(1.1)}
+#A .cp[aria-pressed="true"]{background:var(--sun);transform:translate(-50%,-50%) scale(1.15)}
+#A .flag{position:absolute;font:700 12px Outfit,sans-serif;color:var(--forest);background:#fff;border-radius:999px;padding:4px 10px;transform:translate(-50%,-150%)}
+#A .stop{background:#fff;border-radius:24px;padding:24px;box-shadow:0 20px 40px -24px rgba(30,77,59,.4)}
+#A .stop .t{font-weight:700;color:var(--sun);font-size:14px}
+#A .stop h3{font:700 clamp(22px,2.4vw,28px)/1.1 Unbounded,sans-serif;margin:6px 0 10px}
+#A .stop p{color:var(--muted);margin:0}
+#A .stop .learn{margin-top:14px;font-size:14px;background:var(--sun-soft);border-radius:12px;padding:10px 12px}
+
+/* ================= B · CAMP POSTER ================= */
+#B{--sunny:#ffd84d;--tang:#ff6b35;--teal:#0fa3a0;--pink:#ff7eb6;--ink:#1d1a39;--paper:#fffdf6;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;overflow:hidden}
+#B .bar{display:flex;justify-content:space-between;align-items:center;padding-top:22px;font-weight:700}
+#B .bar span{background:var(--ink);color:var(--sunny);padding:6px 12px;border-radius:8px;font-size:13px}
+#B .hero{position:relative;margin-top:22px;background:var(--sunny);border:3px solid var(--ink);border-radius:32px;padding:clamp(22px,4vw,48px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px;align-items:center;box-shadow:10px 10px 0 var(--ink)}
+#B h1{font:400 clamp(52px,8.6vw,120px)/.86 "Bowlby One",Impact,sans-serif;margin:0;text-transform:uppercase;letter-spacing:-.01em}
+#B h1 em{font-style:normal;color:var(--tang);-webkit-text-stroke:3px var(--ink);paint-order:stroke fill}
+#B .lede{font-size:18px;max-width:42ch;margin:18px 0 0}
+#B .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+#B .btn{border:3px solid var(--ink);border-radius:999px;padding:11px 20px;font-weight:700;background:var(--ink);color:var(--sunny);cursor:pointer;box-shadow:4px 4px 0 var(--tang);transition:transform .15s,box-shadow .15s}
+#B .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--tang)}
+#B .btn.alt{background:#fff;color:var(--ink)}
+#B .stick{position:absolute;font:400 18px "Bowlby One",sans-serif;text-transform:uppercase;padding:8px 14px;border:3px solid var(--ink);border-radius:14px;box-shadow:3px 3px 0 var(--ink);cursor:grab;user-select:none;transition:transform .2s}
+#B .stick:hover{transform:rotate(0) scale(1.08)!important}
+#B .s1{background:var(--tang);color:#fff;top:-18px;right:24%;transform:rotate(-8deg)}
+#B .s2{background:var(--teal);color:#fff;bottom:-18px;left:38%;transform:rotate(6deg)}
+#B .s3{background:var(--pink);top:40%;right:-12px;transform:rotate(12deg)}
+#B .pile{position:relative;height:clamp(300px,34vw,420px);cursor:pointer}
+#B .pol{position:absolute;inset:0;margin:auto;width:min(78%,300px);height:fit-content;background:#fff;padding:10px 10px 38px;border:3px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 rgba(29,26,57,.85);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+#B .pol img{aspect-ratio:4/5;object-fit:cover;width:100%;border-radius:2px}
+#B .pol figcaption{position:absolute;left:0;right:0;bottom:8px;text-align:center;font:600 20px Caveat,cursive}
+#B .tip{text-align:center;font:600 18px Caveat,cursive;margin-top:6px}
+#B .marq{margin-top:40px;border-block:3px solid var(--ink);background:var(--ink);color:var(--sunny);overflow:hidden;white-space:nowrap}
+#B .marq div{display:inline-block;padding:12px 0;font:400 22px "Bowlby One",sans-serif;text-transform:uppercase;animation:marq 22s linear infinite}
+@keyframes marq{to{transform:translateX(-50%)}}
+#B h2{font:400 clamp(34px,5vw,64px)/.95 "Bowlby One",sans-serif;text-transform:uppercase;margin:56px 0 6px}
+#B h2 span{color:var(--teal)}
+#B .sub{margin:0 0 20px;font-size:17px}
+#B .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#B .card{perspective:1000px;height:220px;cursor:pointer;border:0;background:none;padding:0;text-align:left}
+#B .card .in{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+#B .card[aria-pressed="true"] .in{transform:rotateY(180deg)}
+#B .face{position:absolute;inset:0;backface-visibility:hidden;border:3px solid var(--ink);border-radius:20px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:5px 5px 0 var(--ink)}
+#B .face.back{transform:rotateY(180deg);background:#fff}
+#B .face .tm{font-weight:700;font-size:13px}
+#B .face h3{font:400 24px/1 "Bowlby One",sans-serif;text-transform:uppercase;margin:0}
+#B .face .hint{font:600 18px Caveat,cursive}
+#B .face.back p{margin:0;font-size:15px}
+#B .face.back b{font:400 15px "Bowlby One",sans-serif;text-transform:uppercase;color:var(--tang)}
+#B .c0 .front{background:var(--tang);color:#fff}#B .c1 .front{background:var(--teal);color:#fff}#B .c2 .front{background:var(--pink)}
+#B .c3 .front{background:var(--sunny)}#B .c4 .front{background:#8f7bff;color:#fff}#B .c5 .front{background:var(--ink);color:var(--sunny)}
+#B .phoneRow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center;margin-top:56px}
+#B .phone{max-width:300px;margin:auto;border:4px solid var(--ink);border-radius:32px;padding:8px;background:var(--ink);box-shadow:8px 8px 0 var(--teal)}
+#B .phone video{border-radius:24px;aspect-ratio:9/16;object-fit:cover;width:100%}
+#B blockquote{margin:0;font:400 clamp(24px,3vw,34px)/1.1 "Bowlby One",sans-serif;text-transform:uppercase}
+#B blockquote span{background:var(--sunny);padding:0 .15em}
+#B cite{display:block;margin-top:14px;font:normal 600 15px "DM Sans",sans-serif}
+
+/* ================= C · BONFIRE NIGHT ================= */
+#C{--night:#15123b;--dusk:#2b1b52;--ember:#ff8a3d;--gold:#ffc861;--rose:#ff5e7e;--text:#f7efe4;--muted:#c6bdd8;color-scheme:dark;background:linear-gradient(180deg,var(--night),var(--dusk) 55%,#3a1f45 100%);color:var(--text);font-family:Manrope,sans-serif;position:relative;overflow:hidden}
+#C canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+#C .lights{position:relative;z-index:2;display:flex;justify-content:space-between;padding:0 4%;height:46px}
+#C .lights svg{position:absolute;inset:0;width:100%;height:100%}
+#C .lights i{position:relative;margin-top:22px;width:10px;height:14px;border-radius:50% 50% 45% 45%;background:var(--gold);box-shadow:0 0 14px 4px rgba(255,200,97,.6);animation:twinkle 3s ease-in-out infinite}
+#C .lights i:nth-child(odd){margin-top:30px;background:var(--rose);box-shadow:0 0 14px 4px rgba(255,94,126,.55);animation-delay:-1.4s}
+@keyframes twinkle{50%{opacity:.45}}
+#C .hero{position:relative;z-index:2;text-align:center;padding-top:clamp(28px,5vw,56px)}
+#C .kick{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+#C h1{font:400 clamp(54px,9vw,128px)/.9 Gloock,Georgia,serif;margin:14px 0 0;text-shadow:0 0 40px rgba(255,138,61,.45)}
+#C h1 em{font-style:italic;color:var(--ember)}
+#C .lede{max-width:56ch;margin:20px auto 0;color:var(--muted);font-size:18px}
+#C .cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+#C .btn{border-radius:999px;padding:13px 22px;font-weight:700;cursor:pointer;border:0;background:linear-gradient(135deg,var(--ember),var(--rose));color:#fff;box-shadow:0 0 30px rgba(255,138,61,.45)}
+#C .btn.alt{background:rgba(255,255,255,.08);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+#C .screen{position:relative;z-index:2;max-width:900px;margin:40px auto 0;border-radius:24px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 0 0 1px rgba(255,200,97,.25),0 30px 80px rgba(0,0,0,.5)}
+#C .screen video{width:100%;height:100%;object-fit:cover}
+#C .fire{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:40px}
+#C .fire div{border-radius:18px;padding:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+#C .fire b{display:block;font:400 clamp(30px,4vw,46px)/1 Gloock,serif;color:var(--gold)}
+#C .fire span{font-size:13px;color:var(--muted)}
+#C h2{position:relative;z-index:2;font:400 clamp(36px,5vw,64px)/1 Gloock,serif;margin:72px 0 6px;text-align:center}
+#C h2 em{color:var(--gold)}
+#C .sub{position:relative;z-index:2;text-align:center;color:var(--muted);margin:0 0 28px}
+#C .day{position:relative;z-index:2;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+#C .slot{border-radius:18px;padding:16px 14px;min-height:190px;border:1px solid rgba(255,255,255,.12);cursor:pointer;text-align:left;transition:transform .25s,box-shadow .25s;color:var(--text)}
+#C .slot:hover,#C .slot[aria-pressed="true"]{transform:translateY(-6px);box-shadow:0 0 0 2px var(--gold),0 18px 30px -12px rgba(255,138,61,.6)}
+#C .slot .tm{font-size:12px;font-weight:700;color:#fff;opacity:.9}
+#C .slot h3{font:400 20px/1.1 Gloock,serif;margin:8px 0 0}
+#C .slot .ic{font-size:24px}
+#C .detail{position:relative;z-index:2;margin-top:16px;border-radius:20px;padding:20px 24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,200,97,.25);min-height:92px}
+#C .detail b{color:var(--gold)}
+#C .q{position:relative;z-index:2;text-align:center;max-width:780px;margin:64px auto 0}
+#C .q p{font:400 clamp(24px,3vw,34px)/1.25 Gloock,serif;margin:0}
+#C .q cite{display:block;margin-top:14px;font-style:normal;color:var(--gold);font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+
+
+/* ================= D · FIELD DAY ================= */
+#D{--turf:#1f7a3f;--turf2:#23894a;--chalk:#ffffff;--board:#111417;--yellow:#ffcc00;--red:#e63946;--sky:#dff1ff;--ink:#101418;background:var(--sky);color:var(--ink);font-family:Barlow,sans-serif;overflow:hidden}
+#D .top{display:flex;justify-content:space-between;align-items:center;padding-top:22px;font:700 15px "Barlow Condensed",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+#D .top i{font-style:normal;color:var(--red)}
+#D .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;padding-top:clamp(28px,4vw,48px)}
+#D .whistle{display:inline-block;font:800 14px "Barlow Condensed",sans-serif;letter-spacing:.12em;text-transform:uppercase;background:var(--red);color:#fff;padding:6px 12px;border-radius:6px;transform:rotate(-2deg)}
+#D h1{font:400 clamp(44px,7vw,92px)/.9 "Archivo Black",Impact,sans-serif;text-transform:uppercase;margin:14px 0 0;letter-spacing:-.01em}
+#D h1 span{display:inline-block;background:var(--yellow);padding:0 .12em;transform:rotate(-1.5deg)}
+#D .lede{font-size:18px;max-width:44ch;margin:18px 0 0}
+#D .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+#D .btn{font:800 17px "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;border:0;border-radius:10px;padding:13px 22px;background:var(--board);color:var(--yellow);cursor:pointer}
+#D .btn.alt{background:#fff;color:var(--board);box-shadow:inset 0 0 0 3px var(--board)}
+#D .board{background:var(--board);color:#fff;border-radius:22px;padding:18px;box-shadow:0 24px 50px -20px rgba(0,0,0,.6);border:6px solid #2a2f35}
+#D .board h3{margin:0 0 12px;font:800 15px "Barlow Condensed",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow);text-align:center}
+#D .teams{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#D .team{background:#1c2126;border-radius:14px;padding:12px 8px;text-align:center}
+#D .team span{font:800 15px "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase}
+#D .team b{display:block;font:400 clamp(40px,5vw,60px)/1 "Archivo Black",sans-serif;color:var(--yellow);font-variant-numeric:tabular-nums;margin-top:6px}
+#D .team.lead{box-shadow:0 0 0 2px var(--yellow)}
+#D .t0 span{color:#7fd3ff}#D .t1 span{color:#ffe066}#D .t2 span{color:#ff8a7a}
+#D .board .vid{margin-top:12px;border-radius:12px;overflow:hidden;aspect-ratio:16/9}
+#D .board video{width:100%;height:100%;object-fit:cover}
+#D .field{margin-top:56px;background:repeating-linear-gradient(90deg,var(--turf) 0 80px,var(--turf2) 80px 160px);border-radius:28px;padding:clamp(18px,3vw,32px);color:#fff;position:relative;border:4px solid #fff;box-shadow:inset 0 0 0 3px rgba(255,255,255,.6)}
+#D .field:before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:3px solid rgba(255,255,255,.55)}
+#D .field:after{content:"";position:absolute;left:50%;top:50%;width:140px;height:140px;margin:-70px;border:3px solid rgba(255,255,255,.55);border-radius:50%}
+#D .field h2{position:relative;z-index:1;font:400 clamp(30px,4.4vw,52px)/1 "Archivo Black",sans-serif;text-transform:uppercase;margin:0}
+#D .field .sub{position:relative;z-index:1;margin:6px 0 18px}
+#D .events{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+#D .ev{background:#fff;color:var(--ink);border-radius:16px;padding:14px;text-align:left;border:0;cursor:pointer;box-shadow:0 8px 0 rgba(0,0,0,.18);transition:transform .15s}
+#D .ev:hover{transform:translateY(-3px)}
+#D .ev .no{font:400 30px/1 "Archivo Black",sans-serif;color:var(--red)}
+#D .ev h3{margin:6px 0 2px;font:800 21px/1.05 "Barlow Condensed",sans-serif;text-transform:uppercase}
+#D .ev small{color:#55606b;font-size:13px}
+#D .ev .won{display:block;margin-top:8px;font:700 13px "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--turf)}
+#D .ref{position:relative;z-index:1;margin-top:16px;background:rgba(0,0,0,.25);border-radius:14px;padding:14px 16px;min-height:60px;font-size:15px}
+#D .ref b{color:var(--yellow)}
+
+/* ================= E · POSTCARDS ================= */
+#E{--air:#1d4e89;--air-red:#d7263d;--paper:#ffffff;--sheet:#eef3f9;--ink:#13233a;--muted:#55657d;background:var(--sheet);color:var(--ink);font-family:"Work Sans",sans-serif;overflow:hidden}
+#E .mailband{height:14px;background:repeating-linear-gradient(135deg,var(--air-red) 0 18px,#fff 18px 30px,var(--air) 30px 48px,#fff 48px 60px)}
+#E .top{display:flex;justify-content:space-between;align-items:center;padding-top:20px;font-weight:600;font-size:14px}
+#E .postmark{display:inline-grid;place-items:center;width:84px;height:84px;border:2px dashed var(--air);border-radius:50%;font:700 10px/1.2 "Work Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--air);text-align:center;transform:rotate(-12deg)}
+#E .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,52px);align-items:center;padding-top:clamp(24px,4vw,44px)}
+#E .kick{font:400 26px Kalam,cursive;color:var(--air-red)}
+#E h1{font:600 clamp(50px,8vw,108px)/.92 Fraunces,Georgia,serif;letter-spacing:-.02em;margin:6px 0 0}
+#E h1 em{font-weight:500;color:var(--air)}
+#E .lede{font-size:18px;color:var(--muted);max-width:44ch;margin:18px 0 0}
+#E .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+#E .btn{border:0;border-radius:10px;padding:13px 20px;font-weight:600;background:var(--air);color:#fff;cursor:pointer}
+#E .btn.alt{background:#fff;color:var(--air);box-shadow:inset 0 0 0 2px var(--air)}
+#E .bigcard{position:relative;background:var(--paper);padding:12px;border-radius:6px;box-shadow:0 26px 50px -24px rgba(19,35,58,.55);transform:rotate(2deg)}
+#E .bigcard:before{content:"";position:absolute;inset:0;border:10px solid transparent;border-image:repeating-linear-gradient(135deg,var(--air-red) 0 14px,#fff 14px 24px,var(--air) 24px 38px,#fff 38px 48px) 10;border-radius:6px;pointer-events:none}
+#E .bigcard video{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:2px}
+#E .bigcard p{margin:10px 6px 2px;font:400 22px Kalam,cursive;color:var(--air)}
+#E .stamp{position:absolute;right:-14px;top:-18px;width:86px;height:100px;background:var(--air-red);color:#fff;display:grid;place-items:center;text-align:center;font:700 11px/1.2 "Work Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;transform:rotate(8deg);border:4px dotted #fff;outline:3px solid var(--air-red)}
+#E .stamp b{display:block;font:600 26px Fraunces,serif}
+#E h2{font:600 clamp(32px,4.6vw,58px)/1 Fraunces,serif;margin:64px 0 6px}
+#E h2 em{color:var(--air-red);font-weight:500}
+#E .sub{color:var(--muted);margin:0 0 22px}
+#E .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+#E .pc{perspective:1200px;height:300px;border:0;background:none;padding:0;cursor:pointer;text-align:left}
+#E .pc .in{position:relative;width:100%;height:100%;transition:transform .7s;transform-style:preserve-3d}
+#E .pc:nth-child(odd) .in{transform:rotate(-1.5deg)}#E .pc:nth-child(even) .in{transform:rotate(1.5deg)}
+#E .pc[aria-pressed="true"] .in{transform:rotateY(180deg)}
+#E .side{position:absolute;inset:0;backface-visibility:hidden;background:var(--paper);border-radius:6px;box-shadow:0 18px 30px -18px rgba(19,35,58,.6);overflow:hidden}
+#E .front img{width:100%;height:74%;object-fit:cover}
+#E .front .lbl{padding:10px 14px}
+#E .front .lbl b{display:block;font:600 20px Fraunces,serif}
+#E .front .lbl span{font-size:13px;color:var(--muted)}
+#E .front .pm{position:absolute;right:10px;top:10px;background:#fff;color:var(--air);font:700 10px "Work Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:5px 9px}
+#E .back{transform:rotateY(180deg);display:grid;grid-template-columns:1.4fr 1fr;padding:18px;gap:14px;background:linear-gradient(var(--paper),var(--paper)) padding-box}
+#E .back .msg{font:400 18px/1.3 Kalam,cursive;color:var(--ink);border-right:1px solid #d4dce8;padding-right:12px;overflow:auto}
+#E .back .addr{display:flex;flex-direction:column;justify-content:flex-end;gap:10px;font-size:13px;color:var(--muted)}
+#E .back .addr b{display:block;color:var(--ink);font-size:14px}
+#E .back .mini{align-self:flex-end;width:46px;height:54px;background:var(--air);border:3px dotted #fff;outline:2px solid var(--air);margin-bottom:auto}
+#E .flipnote{margin-top:14px;font:400 20px Kalam,cursive;color:var(--muted);text-align:center}
+
+@media (max-width:900px){
+  #D .hero,#E .hero{grid-template-columns:1fr}
+  #D .events,#E .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #A .hero,#A .trailbox,#B .hero,#B .phoneRow{grid-template-columns:1fr}
+  #A .stats,#C .fire{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #B .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #C .day{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #B .s3{right:8px}
+}
+@media (max-width:520px){
+  #D .events,#E .cards{grid-template-columns:1fr}
+  #D .teams{gap:6px}
+  #B .cards{grid-template-columns:1fr}
+  #C .day{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #A .badge{width:92px;height:92px;right:4px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="switch" role="toolbar" aria-label="Template options"><div>
+  <button type="button" data-o="A" aria-pressed="true">A<span>Basecamp</span></button>
+  <button type="button" data-o="B" aria-pressed="false">B<span>Camp Poster</span></button>
+  <button type="button" data-o="C" aria-pressed="false">C<span>Bonfire Night</span></button>
+  <button type="button" data-o="D" aria-pressed="false">D<span>Field Day</span></button>
+  <button type="button" data-o="E" aria-pressed="false">E<span>Postcards</span></button>
+</div></div>
+
+<!-- ============ A · BASECAMP ============ -->
+<section class="opt" id="A">
+  <div class="wrap">
+    <div class="top"><span>The Missing <i>P</i></span><span>Team Building Retreats</span></div>
+    <div class="hero">
+      <div>
+        <span class="kick"><b></b>One-day team building retreat</span>
+        <h1>Ascending <span>Together</span></h1>
+        <p class="lede">A high-energy day of team challenges, games and guided reflection. Your people leave re-energized, aligned and ready to perform as one team.</p>
+        <div class="cta"><button class="btn" type="button" data-jump="trailA">See the day's trail</button><button class="btn alt" type="button">Plan your retreat</button></div>
+      </div>
+      <div class="window">
+        <video src="vid/teaser.mp4" poster="img/teaser.jpg" autoplay muted loop playsinline></video>
+        <span class="ph">It's time for a retreat</span>
+        <div class="badge"><div><b>500+</b>IRC staff, one journey</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="ridges" aria-hidden="true">
+    <svg viewBox="0 0 1400 200" preserveAspectRatio="none">
+      <path d="M0 200 L0 120 L120 70 L230 115 L360 40 L470 105 L600 55 L720 120 L860 30 L980 100 L1100 60 L1230 115 L1400 70 L1400 200Z" fill="#9cc7b4"/>
+      <path d="M0 200 L0 150 L160 105 L300 150 L440 95 L580 145 L740 90 L900 150 L1040 110 L1200 155 L1400 115 L1400 200Z" fill="#2f6b52"/>
+      <path d="M0 200 L0 175 L200 150 L380 180 L560 145 L760 182 L960 150 L1160 182 L1400 160 L1400 200Z" fill="#1e4d3b"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="stats">
+      <div><b>15+</b><span>organizations, incl. UN Women, World Bank, EU</span></div>
+      <div><b>5</b><span>regions in one IRC journey</span></div>
+      <div><b>760+</b><span>staff across IRC, MDM, IRP &amp; Malteser</span></div>
+      <div><b>1 day</b><span>or 2–3 days, built around your goals</span></div>
+    </div>
+    <h2 id="trailA">The day is a climb</h2>
+    <p class="sub">Six checkpoints from ice-breaker to summit. Tap a checkpoint.</p>
+    <div class="trailbox">
+      <div class="trail">
+        <svg viewBox="0 0 1000 800" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 800 L0 560 L220 380 L420 520 L640 230 L820 380 L1000 160 L1000 800Z" fill="#c8e2d6"/>
+          <path d="M0 800 L0 680 L260 560 L520 690 L760 540 L1000 640 L1000 800Z" fill="#9cc7b4"/>
+          <path d="M110 720 C 260 700, 300 610, 260 560 S 380 470, 470 470 S 600 420, 560 360 S 640 280, 720 270 S 820 220, 860 140" fill="none" stroke="#1e4d3b" stroke-width="5" stroke-dasharray="4 14" stroke-linecap="round"/>
+        </svg>
+        <span class="flag" style="left:86%;top:17%">Summit: one team</span>
+      </div>
+      <div class="stop" aria-live="polite"><div class="t" id="aT">09:15 – 09:35</div><h3 id="aH">Follow the Leader</h3><p id="aP">Introductions and a high-energy ice-breaker: one person leads with creative actions and everyone follows. Barriers drop and the energy goes up.</p><div class="learn" id="aL"><b>What it builds:</b> instant connection and positive energy</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ B · CAMP POSTER ============ -->
+<section class="opt" id="B" hidden>
+  <div class="wrap">
+    <div class="bar"><span>THE MISSING P</span><span>RETREATS</span></div>
+    <div class="hero">
+      <div>
+        <h1>Ascending <em>Together</em></h1>
+        <p class="lede"><b>One day. Six challenges. Zero boring slides.</b> A team building retreat where people laugh, compete, reflect, and walk back to work as one team.</p>
+        <div class="cta"><button class="btn" type="button" data-jump="cardsB">Flip the challenges</button><button class="btn alt" type="button">Book a retreat</button></div>
+      </div>
+      <div class="pile" id="pile" role="button" tabindex="0" aria-label="Shuffle photos"></div>
+      <span class="stick s1">Team Toofan</span><span class="stick s2">Team Bijli</span><span class="stick s3">Team Aag</span>
+    </div>
+    <div class="tip">tap the photos to shuffle</div>
+  </div>
+  <div class="marq" aria-hidden="true"><div>UN Women ★ The World Bank ★ European Union ★ Save the Children ★ HUBCO ★ GIZ ★ Telenor ★ IRC ★ Islamic Relief ★ Care International ★ UN Women ★ The World Bank ★ European Union ★ Save the Children ★ HUBCO ★ GIZ ★ Telenor ★ IRC ★ Islamic Relief ★ Care International ★&nbsp;</div></div>
+  <div class="wrap">
+    <h2 id="cardsB">The <span>challenges</span></h2>
+    <p class="sub">Every game hides a lesson. Tap a card to see what it teaches.</p>
+    <div class="cards" id="cards"></div>
+    <div class="phoneRow">
+      <div class="phone"><video src="vid/retreat.mp4" poster="img/r45.jpg" controls playsinline preload="metadata"></video></div>
+      <div><blockquote>"This retreat had <span>lots of fun</span> and laughter with lots of important takeaways."</blockquote><cite>Sawai Malhi, UN Women</cite></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ C · BONFIRE NIGHT ============ -->
+<section class="opt" id="C" hidden>
+  <canvas id="sparks" aria-hidden="true"></canvas>
+  <div class="lights" aria-hidden="true"><svg viewBox="0 0 100 46" preserveAspectRatio="none"><path d="M0 8 Q 12 40 25 18 T 50 18 T 75 18 T 100 8" fill="none" stroke="rgba(255,255,255,.35)" stroke-width=".4"/></svg><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="hero">
+      <div class="kick">The Missing P · Team Building Retreat</div>
+      <h1>Ascending <em>Together</em></h1>
+      <p class="lede">From the first ice-breaker in the morning to the last story around the bonfire, a retreat where teams talk openly, laugh together and leave with clarity on what to do next.</p>
+      <div class="cta"><button class="btn" type="button" data-jump="dayC">Walk through the day</button><button class="btn alt" type="button">Plan your retreat</button></div>
+    </div>
+    <div class="screen"><video src="vid/teaser.mp4" poster="img/teaser.jpg" autoplay muted loop playsinline></video></div>
+    <div class="fire">
+      <div><b>500+</b><span>IRC staff across 5 regions</span></div>
+      <div><b>15+</b><span>organizations, from UN Women to HUBCO</span></div>
+      <div><b>6</b><span>challenges, each with a debrief</span></div>
+      <div><b>1 team</b><span>leaving aligned and re-energized</span></div>
+    </div>
+    <h2 id="dayC">Sunrise to <em>bonfire</em></h2>
+    <p class="sub">Tap a moment of the day.</p>
+    <div class="day" id="day"></div>
+    <div class="detail" id="cDetail" aria-live="polite"></div>
+    <div class="q"><p>"We had a nice session today. Work with fun! We learned how to work on our priorities, how to be positive, and how to handle our stress."</p><cite>Ehtisham-ul-Haq · The World Bank</cite></div>
+  </div>
+</section>
+
+<!-- ============ D · FIELD DAY ============ -->
+<section class="opt" id="D" hidden>
+  <div class="wrap">
+    <div class="top"><span>The Missing <i>P</i></span><span>Retreat Sports Day</span></div>
+    <div class="hero">
+      <div>
+        <span class="whistle">Whistle blows at 09:15</span>
+        <h1>Ascending <span>Together</span></h1>
+        <p class="lede">Six challenges. Three teams. One scoreboard. A team building retreat that feels like sports day, and ends with every team stronger than it started.</p>
+        <div class="cta"><button class="btn" type="button" data-jump="fieldD">Play the day</button><button class="btn alt" type="button">Book your field day</button></div>
+      </div>
+      <div class="board">
+        <h3>Live scoreboard</h3>
+        <div class="teams">
+          <div class="team t0"><span>Toofan</span><b id="sc0">0</b></div>
+          <div class="team t1"><span>Bijli</span><b id="sc1">0</b></div>
+          <div class="team t2"><span>Aag</span><b id="sc2">0</b></div>
+        </div>
+        <div class="vid"><video src="vid/teaser.mp4" poster="img/teaser.jpg" autoplay muted loop playsinline></video></div>
+      </div>
+    </div>
+    <div class="field" id="fieldD">
+      <h2>The events</h2>
+      <p class="sub">Tap an event to play it. Points go on the board, and the debrief shows what the team really learned.</p>
+      <div class="events" id="events"></div>
+      <div class="ref" id="ref" aria-live="polite"><b>Referee's note:</b> pick an event to start the day.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ E · POSTCARDS ============ -->
+<section class="opt" id="E" hidden>
+  <div class="mailband" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="top"><span>The Missing P · Retreats</span><span class="postmark">Murree<br>Nathiagali<br>Karachi<br>Lahore</span></div>
+    <div class="hero">
+      <div>
+        <div class="kick">wish you were here…</div>
+        <h1>Ascending <em>Together</em></h1>
+        <p class="lede">From the hills of Murree to the shores of Karachi, retreats where teams step away from their desks and come back as one team. Here are a few postcards from the road.</p>
+        <div class="cta"><button class="btn" type="button" data-jump="cardsE">Read the postcards</button><button class="btn alt" type="button">Plan your retreat</button></div>
+      </div>
+      <div class="bigcard">
+        <video src="vid/teaser.mp4" poster="img/teaser.jpg" autoplay muted loop playsinline></video>
+        <p>It's time for a retreat: from reflection to alignment.</p>
+        <div class="stamp"><div><b>500+</b>IRC staff</div></div>
+      </div>
+    </div>
+    <h2 id="cardsE">Postcards from <em>past retreats</em></h2>
+    <p class="sub">Tap a postcard to read the message on the back.</p>
+    <div class="cards" id="pcards"></div>
+    <div class="flipnote">every retreat is built around the team's own goals</div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var A=[
+    ['09:15 – 09:35','Follow the Leader','Introductions and a high-energy ice-breaker: one person leads with creative actions and everyone follows. Barriers drop and the energy goes up.','instant connection and positive energy','🙌'],
+    ['09:35 – 10:00','Scavenger Hunt','Silent team formation (find your Toofan, Bijli or Aag teammates without a word), then a race to take team selfies at 10 hidden spots.','communication without words, and team spirit','📸'],
+    ['10:00 – 10:25','Water Passing','The whole line passes water from glass to glass. Every spill teaches something about hand-offs.','collaboration and care in hand-offs','💧'],
+    ['10:25 – 11:00','Plane Flying Challenge','Teams build paper planes to fly the farthest. The debrief twist reveals hidden assumptions.','innovation, time management, questioning assumptions','✈️'],
+    ['11:00 – 12:00','Egg Drop','Teams design a contraption so a dropped egg survives. Message, beauty and timeline decide who wins.','planning and clear communication under pressure','🥚'],
+    ['12:00 – 01:00','Landmine (Blindfolded)','One teammate crosses unseen obstacles, guided only by the team\'s voices.','trust, leadership and precise instructions','🧭']
+  ];
+  /* A: checkpoints along the trail */
+  var pos=[[11,90],[27,70],[47,59],[56,45],[72,34],[86,18]], trail=document.querySelector('#A .trail');
+  pos.forEach(function(p,i){ var b=document.createElement('button'); b.className='cp'; b.type='button'; b.textContent=i+1; b.style.left=p[0]+'%'; b.style.top=p[1]+'%'; b.setAttribute('aria-pressed',i===0?'true':'false'); b.setAttribute('aria-label',A[i][1]);
+    b.addEventListener('click',function(){ trail.querySelectorAll('.cp').forEach(function(x){x.setAttribute('aria-pressed','false');}); b.setAttribute('aria-pressed','true');
+      document.getElementById('aT').textContent=A[i][0]; document.getElementById('aH').textContent=A[i][1]; document.getElementById('aP').textContent=A[i][2]; document.getElementById('aL').innerHTML='<b>What it builds:</b> '+A[i][3]; });
+    trail.appendChild(b); });
+  /* B: polaroid pile + flip cards */
+  var photos=[['r3','pure laughter'],['r45','selfie squad'],['r72','egg survived!'],['r100','the whole tribe'],['r24','team spirit'],['r60','mic drop']], pile=document.getElementById('pile');
+  photos.forEach(function(p,i){ var f=document.createElement('figure'); f.className='pol'; f.innerHTML='<img src="img/'+p[0]+'.jpg" alt="Retreat moment: '+p[1]+'" loading="lazy"><figcaption>'+p[1]+'</figcaption>'; pile.appendChild(f); });
+  var pols=[].slice.call(pile.children);
+  function lay(){ pols.forEach(function(f,i){ var r=(i%2?1:-1)*(4+i*2.2); f.style.zIndex=i; f.style.transform='rotate('+r+'deg) translate('+((i%3)-1)*14+'px,'+((i%2)*10)+'px)'; }); }
+  lay(); function shuffle(){ pile.insertBefore(pile.lastElementChild,pile.firstElementChild); pols=[].slice.call(pile.children); lay(); }
+  pile.addEventListener('click',shuffle); pile.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();shuffle();} });
+  var cards=document.getElementById('cards');
+  A.forEach(function(a,i){ var c=document.createElement('button'); c.type='button'; c.className='card c'+i; c.setAttribute('aria-pressed','false');
+    c.innerHTML='<div class="in"><div class="face front"><span class="tm">'+a[0]+'</span><h3>'+a[1]+'</h3><span class="hint">flip me ↻</span></div><div class="face back"><p>'+a[2]+'</p><p><b>Teaches:</b> '+a[3]+'</p></div></div>';
+    c.addEventListener('click',function(){ c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true'); }); cards.appendChild(c); });
+  /* C: day from sunrise to night */
+  var sky=['linear-gradient(160deg,#ffb26b,#ff7a59)','linear-gradient(160deg,#ffc861,#ff8a3d)','linear-gradient(160deg,#ff8a6b,#e0577a)','linear-gradient(160deg,#c45ba0,#7b3fa0)','linear-gradient(160deg,#6a3fa0,#3a2a7a)','linear-gradient(160deg,#3a2a7a,#1d1a4f)'];
+  var day=document.getElementById('day'), det=document.getElementById('cDetail');
+  function show(i){ det.innerHTML='<b>'+A[i][0]+' · '+A[i][1]+'</b><br>'+A[i][2]+' <span style="color:var(--gold)">It builds '+A[i][3]+'.</span>'; day.querySelectorAll('.slot').forEach(function(s,k){s.setAttribute('aria-pressed',k===i?'true':'false');}); }
+  A.forEach(function(a,i){ var s=document.createElement('button'); s.type='button'; s.className='slot'; s.style.background=sky[i];
+    s.innerHTML='<div class="ic">'+a[4]+'</div><div class="tm">'+a[0]+'</div><h3>'+a[1]+'</h3>'; s.addEventListener('click',function(){show(i);}); day.appendChild(s); });
+  show(0);
+  /* C: rising sparks */
+  var cv=document.getElementById('sparks'), cx=cv.getContext('2d'), P=[], run=false;
+  function size(){ var r=cv.getBoundingClientRect(); cv.width=r.width*devicePixelRatio; cv.height=r.height*devicePixelRatio; }
+  function tick(){ if(!run) return; var w=cv.width,h=cv.height; cx.clearRect(0,0,w,h);
+    if(P.length<90) P.push({x:Math.random()*w,y:h+10,v:.4+Math.random()*1.2,r:(1+Math.random()*2.2)*devicePixelRatio,a:1,d:(Math.random()-.5)*.6});
+    P.forEach(function(p){ p.y-=p.v*devicePixelRatio; p.x+=p.d+Math.sin(p.y/60)*.3; p.a-=.0016; cx.beginPath(); cx.fillStyle='rgba(255,'+(140+Math.floor(Math.random()*60))+',80,'+Math.max(p.a,0)+')'; cx.arc(p.x,p.y,p.r,0,7); cx.fill(); });
+    P=P.filter(function(p){return p.a>0&&p.y>-10;}); requestAnimationFrame(tick); }
+
+  /* D: field day scoreboard */
+  var pts=[0,0,0], evs=document.getElementById('events'), ref=document.getElementById('ref');
+  A.forEach(function(a,i){ var b=document.createElement('button'); b.type='button'; b.className='ev';
+    b.innerHTML='<div class="no">0'+(i+1)+'</div><h3>'+a[1]+'</h3><small>'+a[0]+'</small><span class="won"></span>';
+    b.addEventListener('click',function(){ var w=Math.floor(Math.random()*3), names=['Toofan','Bijli','Aag']; pts[w]+=10; pts[(w+1)%3]+=5;
+      [0,1,2].forEach(function(k){ document.getElementById('sc'+k).textContent=pts[k]; document.getElementById('sc'+k).parentNode.classList.toggle('lead',pts[k]===Math.max.apply(null,pts)&&pts[k]>0); });
+      b.querySelector('.won').textContent='Won by Team '+names[w]+' · +10';
+      ref.innerHTML='<b>'+a[1]+':</b> '+a[2]+' <b>Debrief:</b> '+a[3]+'.'; });
+    evs.appendChild(b); });
+  /* E: postcards */
+  var PC=[
+    ['r100','IRC Pakistan','500+ staff · 5 regions · 3 days','Karachi · Nathiagali · Lahore','From Andaaz Apna Apna to plane wars, talent shows and fun-filled bonfires, it was a roller coaster of back-to-back activities.','Retreat recap, IRC Pakistan'],
+    ['r45','Malteser International','60+ team members','Murree','60+ team members opted for an incredible fun break in the mountains of Murree.','Retreat recap'],
+    ['r72','GIZ Migration Team','20 members · 3 days','Avari Hotel, Lahore','Ascending Together: scaling up for excellence. Three days of team building and planning, April 14–16, 2025.','GIZ retreat, 2025'],
+    ['r3','UN Women','Staff retreat','Staff retreat','This retreat had lots of fun and laughter with lots of important takeaways. Every participant laughed, engaged, and encouraged each other.','Sawai Malhi, PSS UN Women'],
+    ['r60','The World Bank','Learning team','Learning team','We had a nice session today. Work with fun! We learned how to work on our priorities, how to be positive and how to handle our stress.','Ehtisham-ul-Haq, The World Bank'],
+    ['r24','MDM','100+ team','100+ team','100+ team members joining heads for a non-stop fun and learning journey.','Retreat recap']
+  ], pcs=document.getElementById('pcards');
+  PC.forEach(function(c){ var b=document.createElement('button'); b.type='button'; b.className='pc'; b.setAttribute('aria-pressed','false');
+    b.innerHTML='<div class="in"><div class="side front"><img src="img/'+c[0]+'.jpg" alt="'+c[1]+' retreat" loading="lazy"><span class="pm">'+c[3]+'</span><div class="lbl"><b>'+c[1]+'</b><span>'+c[2]+'</span></div></div>'+
+      '<div class="side back"><div class="msg">'+c[4]+'</div><div class="addr"><span class="mini"></span><span>From<b>'+c[5]+'</b></span><span>To<b>Usman Gulzari &amp; team</b></span></div></div></div>';
+    b.addEventListener('click',function(){ b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true'); }); pcs.appendChild(b); });
+  /* switcher */
+  var btns=document.querySelectorAll('.switch button');
+  function go(o){ btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.o===o?'true':'false');}); ['A','B','C','D','E'].forEach(function(k){document.getElementById(k).hidden=k!==o;});
+    if(o==='C'&&!reduce){ size(); run=true; tick(); } else run=false; try{localStorage.setItem('ret-opt',o);}catch(e){} scrollTo(0,0); }
+  btns.forEach(function(b){b.addEventListener('click',function(){go(b.dataset.o);});});
+  try{ var s=localStorage.getItem('ret-opt'); if(s) go(s); }catch(e){}
+  addEventListener('resize',function(){ if(run) size(); });
+  document.querySelectorAll('[data-jump]').forEach(function(b){ b.addEventListener('click',function(){ document.getElementById(b.dataset.jump).scrollIntoView({behavior:reduce?'auto':'smooth'}); }); });
+})();
+</script>
+
+</body>
+</html>
