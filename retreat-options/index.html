@@ -8,7 +8,7 @@
 <title>Ascending Together Templates</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@500;700;800&family=Barlow:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Kalam:wght@400;700&family=Work+Sans:wght@400;500;600&family=Unbounded:wght@400;700;900&family=Outfit:wght@400;500;600;700&family=Bowlby+One&family=DM+Sans:wght@400;500;700&family=Gloock&family=Manrope:wght@400;500;700&family=Caveat:wght@600&display=swap">
 <style>
-/* Three directions for the "Ascending Together" retreat page, switchable from the top bar.
+/* Five directions for the "Ascending Together" retreat page, switchable from the top bar.
    A Basecamp: sky, forest and sunrise; the day is a trail up a mountain.
    B Camp Poster: loud sticker-and-polaroid playfulness; activities are flip cards.
    C Bonfire Night: dusk-to-night warmth, rising sparks, string lights; the day runs from sunrise to bonfire.
@@ -417,6 +417,7 @@ img,video{display:block;max-width:100%}
   </div>
 </section>
 
+
 <script>
 (function(){
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -482,6 +483,7 @@ img,video{display:block;max-width:100%}
     b.innerHTML='<div class="in"><div class="side front"><img src="img/'+c[0]+'.jpg" alt="'+c[1]+' retreat" loading="lazy"><span class="pm">'+c[3]+'</span><div class="lbl"><b>'+c[1]+'</b><span>'+c[2]+'</span></div></div>'+
       '<div class="side back"><div class="msg">'+c[4]+'</div><div class="addr"><span class="mini"></span><span>From<b>'+c[5]+'</b></span><span>To<b>Usman Gulzari &amp; team</b></span></div></div></div>';
     b.addEventListener('click',function(){ b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true'); }); pcs.appendChild(b); });
+
   /* switcher */
   var btns=document.querySelectorAll('.switch button');
   function go(o){ btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.o===o?'true':'false');}); ['A','B','C','D','E'].forEach(function(k){document.getElementById(k).hidden=k!==o;});
