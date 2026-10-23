@@ -291,6 +291,7 @@ h1 .thin,h2 .thin{font-weight:500;display:block;font-size:.5em;letter-spacing:.0
 .deliver b{display:block;font:800 22px var(--display);text-transform:uppercase;color:var(--blue-deep);margin-bottom:4px}
 .contact{margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:var(--blue-soft);border-radius:20px;padding:18px 22px}
 .contact p{margin:0;font-weight:600}
+.contact-btns{display:flex;flex-wrap:wrap;gap:10px}
 .contact .sel{user-select:all;font-weight:400;color:var(--muted);font-size:14px}
 
 /* ---------- footlights + clicker ---------- */
@@ -537,8 +538,8 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
       <div class="feature-vid"><video src="vid/momina.mp4" poster="img/momina.jpg" controls playsinline preload="metadata"></video></div>
       <div class="feature-txt">
         <div class="bill">Featured testimonial</div>
-        <h3>Momina</h3>
-        <p class="who">Participant · The Nitty-Gritty of Public Speaking</p>
+        <h3>Momina Tariq</h3>
+        <p class="who">Global Learning &amp; Development Manager &amp; Head of Learning Strategy for Pakistan</p>
         <p>Hear it in her own words: what changed after two days of practice with the PODIUM method, recorded right after the workshop.</p>
       </div>
     </div>
@@ -546,13 +547,13 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
       <div>
         <div class="vwall">
           <button class="reel" type="button" data-video="vid/qazi-ishaq.mp4" data-cap="Qazi Ishaq, One Network · The Nitty-Gritty of Public Speaking"><img src="img/qazi-ishaq.jpg" alt="" loading="lazy" style="object-position:22% 50%"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Qazi Ishaq</b><span>One Network</span></span></button>
-          <button class="reel" type="button" data-video="vid/faysal-4.mp4" data-cap="Faysal Bank Limited · The Nitty-Gritty of Public Speaking"><img src="img/faysal-4.jpg" alt="" loading="lazy" style="object-position:30% 50%"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Faysal Bank</b><span>Workshop participant</span></span></button>
+          <button class="reel" type="button" data-video="vid/faysal-4.mp4" data-cap="Zubia Shehryar, Regional Learning Head (North), Faysal Bank · The Nitty-Gritty of Public Speaking"><img src="img/faysal-4.jpg" alt="" loading="lazy" style="object-position:30% 50%"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Zubia Shehryar</b><span>Regional Learning Head · Faysal Bank</span></span></button>
           <button class="reel" type="button" data-video="vid/faysal-1.mp4" data-cap="Branch, Operations and Cluster Manager · Faysal Bank Limited · The Nitty-Gritty of Public Speaking"><img src="img/faysal-1.jpg" alt="" loading="lazy"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Faysal Bank</b><span>Branch & cluster manager</span></span></button>
           <button class="reel" type="button" data-video="vid/faysal-2.mp4" data-cap="Branch, Operations and Cluster Manager · Faysal Bank Limited · The Nitty-Gritty of Public Speaking"><img src="img/faysal-2.jpg" alt="" loading="lazy"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Faysal Bank</b><span>Branch & cluster manager</span></span></button>
-          <button class="reel" type="button" data-video="vid/faysal-3.mp4" data-cap="Branch, Operations and Cluster Manager · Faysal Bank Limited · The Nitty-Gritty of Public Speaking"><img src="img/faysal-3.jpg" alt="" loading="lazy"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Faysal Bank</b><span>Branch & cluster manager</span></span></button>
+          <button class="reel" type="button" data-video="vid/farid-jaffer.mp4" data-cap="Farid Jaffer, Owner/Director, Jaffer Brothers · The Nitty-Gritty of Public Speaking"><img src="img/farid-jaffer.jpg" alt="" loading="lazy"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Farid Jaffer</b><span>Owner/Director · Jaffer Brothers</span></span></button>
           <button class="reel" type="button" data-video="vid/agtl-bilal.mp4" data-cap="Muhammad Bilal, Head of HR at AGTL · Together We Rise workshop"><img src="img/agtl-poster.jpg" alt="" loading="lazy"><span class="mini"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span><span class="t"><b>Muhammad Bilal</b><span>Head of HR · AGTL</span></span></button>
         </div>
-        <p class="vid-cap">Participants from One Network, Faysal Bank and AGTL after their workshops with Usman Gulzari. Tap any video to play.</p>
+        <p class="vid-cap">Leaders and participants from Jaffer Brothers, Faysal Bank, One Network and AGTL after their workshops with Usman Gulzari. Tap any video to play.</p>
       </div>
       <div class="qgrid">
         <article class="q wide"><p>His expertise, dedication and exceptional training techniques have left an indelible mark on the participants, making a significant positive impact on their communication skills and personal growth. He effortlessly conveyed complex ideas in a clear and concise manner.</p><footer><b>Hassan Muhammad Sandhu</b>HR Business Partner · on the Effective Communication and Present to Win program</footer></article>
@@ -636,8 +637,12 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
       <div><b>Videos</b>Every participant's presentations on Drive</div>
     </div>
     <div class="contact">
-      <p>Ready to see your team present differently?<br><span class="sel">www.themissingp.com</span></p>
-      <a class="btn" href="https://www.themissingp.com" target="_blank" rel="noopener">Book a 20-minute walkthrough</a>
+      <div><p>Ready to see your team present differently?</p><p class="sel">WhatsApp: +92 331 8201396 · usman@themissingp.com</p></div>
+      <div class="contact-btns">
+        <a class="btn" href="https://wa.me/923318201396?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20the%20Delivering%20Impactful%20Presentations%20workshop." target="_blank" rel="noopener">WhatsApp us</a>
+        <a class="btn ghost" href="mailto:usman@themissingp.com?subject=Delivering%20Impactful%20Presentations%20workshop">Email us</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/usmangulzari/" target="_blank" rel="noopener">Usman on LinkedIn</a>
+      </div>
     </div>
   </section>
 </main>
