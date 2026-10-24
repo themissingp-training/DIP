@@ -68,7 +68,9 @@ main{position:relative;z-index:2;padding-inline:clamp(16px,5vw,64px);padding-blo
 .bill{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);font-weight:700}
 .bill::before{content:"";width:28px;height:2px;background:var(--amber)}
 h1,h2{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:.005em;margin:14px 0 0;text-wrap:balance}
-h1{font-size:clamp(50px,8.4vw,116px)}
+h1{font-size:clamp(44px,8.4vw,116px)}
+.hero>div:first-child{container-type:inline-size}
+@supports (font-size:1cqi){.hero h1{font-size:clamp(40px,13.2cqi,116px)}}
 .hero>div{min-width:0}
 h2{font-size:clamp(40px,6vw,76px)}
 h1 .thin,h2 .thin{font-weight:500;display:block;font-size:.5em;letter-spacing:.06em;color:var(--muted)}
