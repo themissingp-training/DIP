@@ -171,6 +171,24 @@ h1 .thin,h2 .thin{font-weight:500;display:block;font-size:.5em;letter-spacing:.0
 .outcomes div{display:flex;gap:10px;align-items:flex-start;font-size:15px;background:rgba(255,255,255,.6);border-radius:12px;padding:12px}
 .outcomes i{flex:0 0 22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:700}
 
+.pd-when{display:flex;flex-wrap:wrap;gap:6px}
+.pd-when span{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--blue-deep);background:var(--blue-soft);border-radius:999px;padding:4px 10px}
+.pd-when span.d{background:var(--blue);color:#fff}
+.podium-detail h3{margin:10px 0 0;font-size:22px}
+.pd-topics{margin:10px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}
+.pd-topics li{display:flex;gap:10px;align-items:flex-start;color:var(--ink);font-size:15px}
+.pd-topics li::before{content:"";flex:0 0 7px;height:7px;border-radius:50%;margin-top:8px;background:var(--amber)}
+.pd-topics li.sub{grid-column:1/-1;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-top:4px}
+.pd-topics li.sub::before{display:none}
+.day ol.tl{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:4px}
+.tl li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;padding:8px 10px;border-radius:10px;font-size:14px;transition:background .25s,opacity .25s}
+.tl li time{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;font-weight:600}
+.tl li.brk{color:var(--muted);font-size:13px}
+.tl li.on{background:var(--amber-soft);box-shadow:inset 3px 0 0 var(--amber);font-weight:600}
+.tl li.on time{color:var(--blue-deep)}
+.days.focus .tl li:not(.on):not(.brk){opacity:.55}
+.day.has h4::after{content:" · this module";font:600 12px var(--body);letter-spacing:.06em;text-transform:none;color:var(--amber)}
+@media (max-width:600px){.pd-topics{grid-template-columns:1fr}.tl li{grid-template-columns:82px minmax(0,1fr)}}
 /* ---------- 04 in the room ---------- */
 .room{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.7fr);gap:16px;margin-top:32px;align-items:start}
 .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
@@ -458,12 +476,13 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
     </div>
     <div class="podium-detail" aria-live="polite">
       <div class="big" id="pdL">P</div>
-      <div><em id="pdDay">Day one</em><h3 id="pdT">The pre-requisites</h3><p id="pdD">The seven signs of a strong presenter, and the common sins that lose an audience before the content even lands.</p></div>
+      <div>
+        <div class="pd-when" id="pdWhen"></div>
+        <h3 id="pdT"></h3>
+        <ul class="pd-topics" id="pdTopics"></ul>
+      </div>
     </div>
-    <div class="days">
-      <div class="day"><h4>Day one</h4><ol><li>Avoiding the sins of presentation skills</li><li>Plan and design your presentation</li><li>Open and close with a bang</li></ol></div>
-      <div class="day"><h4>Day two</h4><ol start="4"><li>Elevate presence with non-verbal elements</li><li>Handle impromptu speaking</li><li>Making an impact</li></ol><div class="final">Ends with group and final individual presentations, recorded.</div></div>
-    </div>
+    <div class="days" id="days"></div>
     <div class="outcomes">
       <div><i>✓</i>Express thoughts with clarity</div>
       <div><i>✓</i>Connect with the audience instantly</div>
@@ -711,22 +730,37 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
   function ab(){ pairs.style.setProperty('--p', r.value/100); }
   r.addEventListener('input',ab); ab();
 
-  /* ---- PODIUM ---- */
-  var P=[
-    ['P','Day one','The pre-requisites','The seven signs of a strong presenter, and the common sins that lose an audience before the content even lands.'],
-    ['O','Day one','Overcoming nervousness','What to say, and how to say it, in the first few minutes, so nerves turn into energy instead of panic.'],
-    ['D','Day one','Developing your message','How to structure and organize a message so the audience follows it, remembers it and acts on it.'],
-    ['I','Day two','Impromptu','Handling difficult situations and on-the-spot questions with gravitas, without freezing.'],
-    ['U','Day two','Unspoken language','Showing confidence through non-verbal tools: posture, gestures, eye contact, voice and pace.'],
-    ['M','Day two','Making an impact','Takeaways for a lasting impression, then group and final individual presentations, recorded to show the change.']
+  /* ---- PODIUM: module details + two-day schedule (from the workshop outline) ---- */
+  var MOD={
+    P:{t:'Pre-requisites of communication & presentation skills',when:[['Day 1','10:45 – 12:00','Module 1']],topics:['Win the battle in your mind first','Source of confidence','One FM station everyone wants to listen to','How action speaks louder than words','Avoid death by PowerPoint','The loose-tight principle']},
+    O:{t:'Overcoming nervousness',when:[['Day 1','12:00 – 13:00','Module 2'],['Day 1','14:00 – 14:45','Practice']],topics:['Reasons for nervousness','What to do in the first few seconds of your talk','Techniques to combat fear, e.g. normalizing breathing','Show confidence with 5 channels of body language (practical)','Activity: overcoming nervousness with the PAL framework','#Practice session','Participants practise PAL, watch their own videos and get on-the-spot feedback']},
+    D:{t:'Developing effective presentations',when:[['Day 1','14:45 – 16:30','Module 3']],topics:['Group activity: how to structure your message (chart paper & sticky notes)','A template for developing your presentations','Formulating a specific purpose & central idea','Presenting to senior management so they listen and interrupt less','Using PowerPoint effectively (no death by PowerPoint)','Laughter activity & tea break']},
+    I:{t:'Impromptu speeches & difficult situations',when:[['Day 2','09:15 – 09:45','Module 5'],['Day 2','14:00 – 15:30','Module 7']],topics:['#Dealing with difficult situations','What to do when you forget your message in front of an audience','Discussing the challenges each participant faces','#Impromptu speeches','How to speak without preparation','Strategies to respond in difficult situations','Activity: everyone speaks impromptu on a random topic']},
+    U:{t:'Unspoken language: confidence through body language',when:[['Day 2','09:45 – 10:45','Module 6'],['Day 2','11:00 – 13:00','Practice']],topics:['Display confidence with your body language','Take control of posture, facial expressions, movement & gestures','Use of pause, pace, volume & pitch','PACE activity: how many words do you speak per minute?','#Practice session','Body language & voice fun activity','Group presentations, demos by each group, evaluations','Individual action plan']},
+    M:{t:'Making impact with engagement tools',when:[['Day 1','16:30 – 17:15','Module 4']],topics:['Framing your message to connect with the audience','Begin & close your presentation with a bang','Delivering technical information (e.g. SOPs) in an engaging way','Presenting statistics and numbers meaningfully','Making key points stick, even days later']}
+  };
+  var DAYS=[
+    ['Day one',[['09:10 – 10:30','Introductions & first presentations (recorded)',''],['10:30 – 10:45','Tea break','b'],['10:45 – 12:00','Module 1 · Pre-requisites','P'],['12:00 – 13:00','Module 2 · Overcoming nervousness','O'],['13:00 – 14:00','Lunch break','b'],['14:00 – 14:45','Practice · Overcoming nervousness (PAL)','O'],['14:45 – 16:30','Module 3 · Developing effective presentations','D'],['16:30 – 17:15','Module 4 · Making impact','M']]],
+    ['Day two',[['09:00 – 09:15','Recap of Day 1',''],['09:15 – 09:45','Module 5 · Dealing with difficult situations','I'],['09:45 – 10:45','Module 6 · Body language & voice','U'],['10:45 – 11:00','Tea break','b'],['11:00 – 13:00','Practice · Body language, group presentations, action plan','U'],['13:00 – 14:00','Lunch & prayer break','b'],['14:00 – 15:30','Module 7 · Impromptu speeches','I'],['15:45 – 17:15','Final individual presentations (recorded) & closing','']]]
   ];
-  var steps=document.querySelectorAll('#podium .step');
-  steps.forEach(function(s){ s.addEventListener('click',function(){
-    var d=P[+s.dataset.i];
-    steps.forEach(function(x){ x.setAttribute('aria-pressed',x===s?'true':'false'); });
-    document.getElementById('pdL').textContent=d[0]; document.getElementById('pdDay').textContent=d[1];
-    document.getElementById('pdT').textContent=d[2]; document.getElementById('pdD').textContent=d[3];
-  }); });
+  var daysEl=document.getElementById('days');
+  DAYS.forEach(function(d){ var box=document.createElement('div'); box.className='day'; var h=document.createElement('h4'); h.textContent=d[0]; box.appendChild(h);
+    var ol=document.createElement('ol'); ol.className='tl';
+    d[1].forEach(function(r){ var li=document.createElement('li'); if(r[2]==='b') li.className='brk'; li.dataset.m=r[2]; var t=document.createElement('time'); t.textContent=r[0]; var sp=document.createElement('span'); sp.textContent=r[1]; li.appendChild(t); li.appendChild(sp); ol.appendChild(li); });
+    box.appendChild(ol); daysEl.appendChild(box); });
+  var steps=document.querySelectorAll('#podium .step'), letters='PODIUM';
+  function showMod(L){
+    var m=MOD[L]; document.getElementById('pdL').textContent=L; document.getElementById('pdT').textContent=m.t;
+    var w=document.getElementById('pdWhen'); w.innerHTML='';
+    m.when.forEach(function(x){ var a=document.createElement('span'); a.className='d'; a.textContent=x[0]; var b=document.createElement('span'); b.textContent=x[2]+' · '+x[1]; w.appendChild(a); w.appendChild(b); });
+    var ul=document.getElementById('pdTopics'); ul.innerHTML='';
+    m.topics.forEach(function(t){ var li=document.createElement('li'); if(t.charAt(0)==='#'){ li.className='sub'; t=t.slice(1);} li.textContent=t; ul.appendChild(li); });
+    daysEl.classList.add('focus');
+    daysEl.querySelectorAll('.day').forEach(function(day){ var any=false; day.querySelectorAll('li').forEach(function(li){ var on=li.dataset.m===L; li.classList.toggle('on',on); if(on) any=true; }); day.classList.toggle('has',any); });
+    steps.forEach(function(x){ x.setAttribute('aria-pressed',letters.charAt(+x.dataset.i)===L?'true':'false'); });
+  }
+  steps.forEach(function(s){ s.addEventListener('click',function(){ showMod(letters.charAt(+s.dataset.i)); }); });
+  showMod('P');
 
   /* ---- results ---- */
   var people=[['Barkat',45,63],['Seemab',45,82],['Saif Ur Rehman',72,90],['Zaid Butt',60,100],['M. Usman Afzal',57,85],['Hafiz Sibtain',68,96],['M. Imtiaz',40,89],['M. Jawad',81,95],['Hina Saleem',49,83],['Talha Yaseen',51,74],['Azeem Aslam',35,89],['Muhammad Bin Ajmal',51,69],['Waleed Ahmed',57,84],['Tyyba Arshad',52,72]];
