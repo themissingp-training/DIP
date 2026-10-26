@@ -114,9 +114,13 @@ footer.f{text-align:center;color:var(--muted);font-size:13px;padding-bottom:28px
 }
 @media (max-width:520px){ .p-nums{grid-template-columns:1fr 1fr} .top a.cta{display:none} }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.optbar{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:50;display:flex;gap:4px;padding:5px;border-radius:14px;background:rgba(20,24,40,.88);backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.optbar a{font:600 12px system-ui,sans-serif;color:#cfd6e6;text-decoration:none;padding:7px 11px;border-radius:9px;white-space:nowrap}
+.optbar a[aria-current="page"]{background:#fff;color:#141828}
 </style>
 </head>
 <body>
+<nav class="optbar" aria-label="Design options"><a href="index.html" aria-current="page">Option 1 · Blue stage</a><a href="option-2.html">Option 2 · Midnight</a><a href="option-3.html">Option 3 · Fresh</a></nav>
 <div class="valance" aria-hidden="true"></div>
 <div class="wrap">
   <header class="top">
