@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>The Missing P Programs</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800;900&family=Figtree:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap">
+<style>
+/* Programs hub (demo). One page, one tab per program; each tab previews the program and links to its full one-page site.
+   Same brand system as the DIP page: TMP blue + yellow on a light stage. */
+:root{
+  --stage:#f6f8fc;--paper:#fff;--ink:#16233b;--muted:#5a6a85;--line:#dde5f2;
+  --blue:#3d79c4;--blue-deep:#1f4e8c;--blue-soft:#e6eefa;--amber:#f6b01e;--amber-soft:#fff2d3;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --hand:"Caveat","Comic Sans MS",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--stage);color:var(--ink);font:16px/1.55 var(--body);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,5vw,48px)}
+.valance{height:12px;background:repeating-linear-gradient(90deg,#2d63a8 0 26px,#3d79c4 26px 52px);border-bottom:3px solid var(--amber)}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo img{width:44px;height:44px;object-fit:contain}
+.logo b{font-weight:700;font-size:15px;line-height:1.1;display:block}
+.logo small{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.top a.cta{font-size:14px;font-weight:600;text-decoration:none;background:var(--blue);color:#fff;border-radius:999px;padding:9px 16px}
+.demo{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--amber-soft);border:1px solid #f3d793;color:var(--blue-deep);border-radius:999px;padding:4px 10px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(20px,4vw,48px) 8px}
+.hero>div:first-child{min-width:0;container-type:inline-size}
+.bill{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);font-weight:700}
+.bill::before{content:"";width:28px;height:2px;background:var(--amber)}
+h1{font:900 clamp(46px,7.4vw,104px)/.88 var(--display);text-transform:uppercase;margin:14px 0 0;letter-spacing:.005em}
+@supports (font-size:1cqi){h1{font-size:clamp(42px,12cqi,104px)}}
+h1 .thin{display:block;font-weight:500;font-size:.48em;letter-spacing:.06em;color:var(--muted)}
+h1 .hi{color:var(--blue)}
+.lede{max-width:54ch;color:var(--muted);font-size:18px;margin:18px 0 0}
+.lede b{color:var(--ink)}
+.trainer{position:relative;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -28px rgba(31,78,140,.5);aspect-ratio:4/3;background:var(--blue-soft)}
+.trainer img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.trainer .cap{position:absolute;left:0;right:0;bottom:0;padding:16px;background:linear-gradient(180deg,transparent,rgba(16,35,70,.85));color:#fff}
+.trainer .cap b{display:block;font:800 22px var(--display);text-transform:uppercase;letter-spacing:.04em}
+.trainer .cap span{font-size:13px;opacity:.9}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px}
+.stat b{display:block;font:900 clamp(30px,3.6vw,42px)/1 var(--display);color:var(--blue-deep)}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* program tabs */
+.progs{margin-top:clamp(36px,5vw,56px)}
+.progs h2{font:900 clamp(32px,4.6vw,56px)/.95 var(--display);text-transform:uppercase;margin:8px 0 0}
+.progs h2 .hi{color:var(--blue)}
+.progs .sub{color:var(--muted);margin:8px 0 0}
+.tabs{display:flex;gap:8px;margin-top:20px;overflow-x:auto;padding:6px;background:var(--paper);border:1px solid var(--line);border-radius:16px;scrollbar-width:thin;position:sticky;top:0;z-index:5}
+.tab{flex:0 0 auto;border:0;background:none;cursor:pointer;border-radius:11px;padding:10px 14px;font:600 14px var(--body);color:var(--muted);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.tab i{font-style:normal;font-size:16px}
+.tab .st{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:2px 7px;background:var(--blue-soft);color:var(--blue-deep)}
+.tab .st.live{background:#d9f3e4;color:#16794a}
+.tab[aria-selected="true"]{background:var(--blue);color:#fff}
+.tab[aria-selected="true"] .st{background:rgba(255,255,255,.2);color:#fff}
+.tab:hover:not([aria-selected="true"]){background:var(--blue-soft);color:var(--ink)}
+
+.panel{margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:24px;overflow:hidden;animation:in .5s cubic-bezier(.2,.75,.2,1)}
+@keyframes in{from{opacity:0;transform:translateY(12px)}}
+.p-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.p-main{padding:clamp(20px,3vw,34px)}
+.p-tag{display:flex;flex-wrap:wrap;gap:8px}
+.p-tag span{font-size:12px;font-weight:700;background:var(--blue-soft);color:var(--blue-deep);border-radius:999px;padding:5px 11px}
+.p-main h3{font:900 clamp(32px,4.2vw,52px)/.92 var(--display);text-transform:uppercase;margin:14px 0 0}
+.p-main .promise{font:700 clamp(24px,2.6vw,30px)/1.1 var(--hand);color:var(--blue);margin:10px 0 0}
+.p-main p{color:var(--muted);max-width:56ch;margin:12px 0 0}
+.p-nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:20px}
+.p-nums div{background:var(--stage);border-radius:14px;padding:12px}
+.p-nums b{display:block;font:900 28px/1 var(--display);color:var(--blue-deep)}
+.p-nums span{font-size:12px;color:var(--muted)}
+.p-for{margin-top:16px;font-size:14px;color:var(--muted)}
+.p-for b{color:var(--ink)}
+.p-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;border-radius:999px;padding:12px 20px;text-decoration:none;border:1px solid var(--blue);background:var(--blue);color:#fff;cursor:pointer}
+.btn.ghost{background:var(--paper);color:var(--ink);border-color:var(--line)}
+.btn.off{background:var(--stage);border-color:var(--line);color:var(--muted);cursor:default}
+.p-side{position:relative;background:var(--blue-deep);color:#fff;display:flex;flex-direction:column}
+.p-side img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.92}
+.p-quote{padding:20px 22px 24px}
+.p-quote p{margin:0;font-size:15px;line-height:1.5}
+.p-quote p::before{content:"\201C";font:900 40px/0 var(--display);color:var(--amber);vertical-align:-14px;margin-right:4px}
+.p-quote footer{margin-top:10px;font-size:13px;color:#cfdcf2}
+.p-quote footer b{color:#fff;display:block}
+.ph{position:absolute;z-index:1;top:12px;left:12px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--amber);color:#2b1d00;border-radius:6px;padding:4px 8px}
+
+/* logos + contact */
+.logos{margin-top:clamp(36px,5vw,56px)}
+.logos h2{font:900 clamp(28px,3.6vw,40px)/1 var(--display);text-transform:uppercase;margin:0 0 14px}
+.logos .box{background:#fff;border:1px solid var(--line);border-radius:24px;padding:10px;overflow:hidden}
+.contact{margin-block:36px 48px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;background:var(--blue);color:#fff;border-radius:24px;padding:22px 26px}
+.contact h3{margin:0;font:900 clamp(26px,3.4vw,38px)/1 var(--display);text-transform:uppercase}
+.contact p{margin:6px 0 0;color:#dce8fb;font-size:14px}
+.contact .btns{display:flex;flex-wrap:wrap;gap:10px}
+.contact .btn{background:var(--amber);border-color:var(--amber);color:#2b1d00}
+.contact .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+footer.f{text-align:center;color:var(--muted);font-size:13px;padding-bottom:28px}
+
+@media (max-width:900px){
+  .hero,.p-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:520px){ .p-nums{grid-template-columns:1fr 1fr} .top a.cta{display:none} }
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="valance" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#"><img src="../img/tmp-logo.png" alt=""><span><b>The Missing P</b><small>Empowering human potential</small></span></a>
+    <span class="demo">Demo · for team review</span>
+    <a class="cta" href="#contact">Talk to us</a>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="bill">Corporate training programs</div>
+      <h1><span class="thin">Programs that change</span>how teams <span class="hi">perform</span></h1>
+      <p class="lede">Practical, high-energy workshops by <b>Usman Gulzari</b> and The Missing P team, measured before and after so you can see the change. Pick a program below to see what it covers, who it's for and the results it has delivered.</p>
+    </div>
+    <div class="trainer">
+      <img src="../img/usman-trainer.jpg" alt="Usman Gulzari in a training room">
+      <div class="cap"><b>Usman Gulzari</b><span>Lead Trainer · 14 years · 2,000+ trainings</span></div>
+    </div>
+  </section>
+  <div class="stats">
+    <div class="stat"><b>125+</b><span>organizations trained</span></div>
+    <div class="stat"><b>50,000+</b><span>professionals reached</span></div>
+    <div class="stat"><b>2,000+</b><span>trainings delivered</span></div>
+    <div class="stat"><b>14 yrs</b><span>on stage</span></div>
+  </div>
+
+  <section class="progs" id="programs">
+    <div class="bill">Our programs</div>
+    <h2>Choose a <span class="hi">program</span></h2>
+    <p class="sub">Each program has its own full page with videos, results and the day-by-day plan.</p>
+    <div class="tabs" role="tablist" aria-label="Programs" id="tabs"></div>
+    <div id="panels"></div>
+  </section>
+
+  <section class="logos">
+    <h2>Trusted by 125+ organizations</h2>
+    <div class="box"><img src="../img/clients.jpg" alt="Client logos including Engro, HBL, Carrefour, Telenor, UN Women, The World Bank and more" loading="lazy"></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div><h3>Let's design your team's program</h3><p>WhatsApp +92 335 0560516 · themissingp.support@gmail.com</p></div>
+    <div class="btns">
+      <a class="btn" href="https://wa.me/923350560516?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20your%20training%20programs." target="_blank" rel="noopener">WhatsApp us</a>
+      <a class="btn ghost" href="mailto:themissingp.support@gmail.com?subject=Training%20programs">Email us</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/usmangulzari/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+  <footer class="f">© The Missing P · Empowering human potential</footer>
+</div>
+
+<script>
+(function(){
+  /* Programs. status: live = full page ready; soon = page coming. Details marked (demo) are placeholders to confirm. */
+  var PROGS=[
+    {id:'dip',icon:'🎤',name:'Delivering Impactful Presentations',short:'Presentations',status:'live',
+     tags:['2 days','Presentation skills','In-person'],promise:'Speak with confidence, clarity & poise',
+     text:'An experiential workshop built on the PODIUM method. Participants present on Day 1 and again on Day 2, recorded, so the change is visible.',
+     nums:[['+53%','avg. score gain'],['4.52/5','participant rating'],['14','batches at Telenor']],
+     forWho:'Junior to senior managers, sales and technical teams',
+     img:'../img/usman-stage.jpg',quote:['I know how to overcome nervousness and structure my message.','M. Usman Afzal','Workshop participant'],
+     link:'../'},
+    {id:'retreat',icon:'⛰️',name:'Ascending Together: Team Retreats',short:'Team Retreats',status:'soon',
+     tags:['1 to 3 days','Team building','Off-site'],promise:'From silos to one team',
+     text:'A high-energy day of team challenges, energizers and guided reflection. Teams leave re-energized, aligned and ready to perform as one.',
+     nums:[['500+','IRC staff, 5 regions'],['15+','organizations'],['6','challenges a day']],
+     forWho:'Whole teams, departments and leadership groups',
+     img:'../img/room-3.jpg',quote:['This retreat had lots of fun and laughter with lots of important takeaways.','Sawai Malhi','UN Women'],
+     link:''},
+    {id:'ttt',icon:'🧑‍🏫',name:'Train the Trainer',short:'Train the Trainer',status:'soon',
+     tags:['2 days (demo)','Facilitation','In-person'],promise:'Turn experts into trainers people remember',
+     text:'For in-house trainers and subject experts: reading the room, opening and closing techniques, energizers and the loose-tight approach to running sessions.',
+     nums:[['Nayatel','recent client'],['SSS','engagement model'],['(demo)','add results']],
+     forWho:'In-house trainers, HR & L&D teams, technical leads',
+     img:'../img/room-2.jpg',quote:['I learned that the real impact of training comes from understanding audience emotions and interests, because connection matters more than just delivery.','Ahmad Fraz','Assistant Manager HR, Nayatel'],
+     link:''},
+    {id:'comm',icon:'💬',name:'Effective Communication Skills',short:'Communication',status:'soon',
+     tags:['1 to 2 days (demo)','Communication','In-person / virtual'],promise:'Say it clearly. Get heard.',
+     text:'Practical communication for client-facing and cross-functional teams: clarity, listening, influence and handling difficult conversations.',
+     nums:[['HBL · UBL','Meezan Bank'],['Jazz','virtual batches'],['(demo)','add results']],
+     forWho:'Business development teams, managers, client-facing staff',
+     img:'../img/room-4.jpg',quote:['His dynamic presentation style and infectious enthusiasm captivated the participants.','Hassan Muhammad Sandhu','HR Business Partner'],
+     link:''},
+    {id:'resilience',icon:'🌱',name:'Stress Management & Building Resilience',short:'Resilience',status:'soon',
+     tags:['1 day','Well-being','In-person'],promise:'Calm minds, stronger teams',
+     text:'A one-day workshop on managing pressure, staying positive and building resilience, based on a pre-workshop survey of your team.',
+     nums:[['Unilever','Wall’s IC Factory'],['1 day','workshop'],['(demo)','add results']],
+     forWho:'Management staff and teams under pressure',
+     img:'../img/room-6.jpg',quote:['We noticed an immediate change in our behaviors and responses.','Usman Tahir','Works Director, Unilever Wall’s IC Factory'],
+     link:''},
+    {id:'reinvent',icon:'🚀',name:'Reinvent Yourself',short:'Reinvent Yourself',status:'soon',
+     tags:['1 to 2 days (demo)','Mindset & growth','In-person'],promise:'Grow the person, grow the performance',
+     text:'A mindset and personal-effectiveness program on ownership, confidence and growth, built to re-energize teams.',
+     nums:[['HUBCO','client'],['Engro','client'],['(demo)','add results']],
+     forWho:'Junior to middle managers',
+     img:'../img/room-7.jpg',quote:['I wish I had found Usman earlier in my career.','Salman Ahmad','Engineering Manager'],
+     link:''}
+  ];
+  var tabs=document.getElementById('tabs'), panels=document.getElementById('panels');
+  function esc(t){ var d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
+  PROGS.forEach(function(p,i){
+    var b=document.createElement('button'); b.className='tab'; b.type='button'; b.setAttribute('role','tab'); b.id='t-'+p.id; b.setAttribute('aria-controls','p-'+p.id);
+    b.innerHTML='<i>'+p.icon+'</i>'+esc(p.short)+'<span class="st'+(p.status==='live'?' live':'')+'">'+(p.status==='live'?'Live':'Soon')+'</span>';
+    b.addEventListener('click',function(){ show(p.id,true); }); tabs.appendChild(b);
+    var s=document.createElement('section'); s.className='panel'; s.id='p-'+p.id; s.setAttribute('role','tabpanel'); s.setAttribute('aria-labelledby','t-'+p.id); s.hidden=true;
+    s.innerHTML='<div class="p-grid"><div class="p-main">'+
+      '<div class="p-tag">'+p.tags.map(function(t){return '<span>'+esc(t)+'</span>';}).join('')+'</div>'+
+      '<h3>'+esc(p.name)+'</h3><div class="promise">'+esc(p.promise)+'</div><p>'+esc(p.text)+'</p>'+
+      '<div class="p-nums">'+p.nums.map(function(n){return '<div><b>'+esc(n[0])+'</b><span>'+esc(n[1])+'</span></div>';}).join('')+'</div>'+
+      '<div class="p-for"><b>Best for:</b> '+esc(p.forWho)+'</div>'+
+      '<div class="p-cta">'+(p.link?'<a class="btn" href="'+p.link+'">Open the full program page →</a>':'<span class="btn off">Full page coming soon</span>')+
+      '<a class="btn ghost" href="#contact">Ask about this program</a></div>'+
+      '</div><div class="p-side">'+(p.status==='live'?'':'<span class="ph">Preview</span>')+'<img src="'+p.img+'" alt="" loading="lazy">'+
+      '<blockquote class="p-quote"><p>'+esc(p.quote[0])+'</p><footer><b>'+esc(p.quote[1])+'</b>'+esc(p.quote[2])+'</footer></blockquote></div></div>';
+    panels.appendChild(s);
+  });
+  function show(id,push){
+    PROGS.forEach(function(p){ var on=p.id===id; document.getElementById('p-'+p.id).hidden=!on; document.getElementById('t-'+p.id).setAttribute('aria-selected',on?'true':'false'); });
+    if(push){ try{ history.replaceState(null,'','#'+id); }catch(e){} }
+  }
+  var h=location.hash.replace('#',''); show(PROGS.some(function(p){return p.id===h;})?h:'dip',false);
+})();
+</script>
+</body>
+</html>
