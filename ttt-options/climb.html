@@ -12,6 +12,7 @@
 <style>
 /* Layout: the ladder-to-target from TMP's own TTT deck. Saturated brand-blue bands, rising rungs, one magenta target. */
 :root{
+  color-scheme:light;
   --blue:#1438C8;       /* TMP blue, saturated */
   --blue-deep:#0B1F6E;
   --sky:#DCE6FF;
@@ -27,9 +28,6 @@
   --body:"Nunito Sans","Segoe UI",Arial,sans-serif;
   --lf-bg:var(--bg);--lf-fg:var(--ink);--lf-muted:var(--ink-2);--lf-line:var(--line);--lf-accent:var(--blue);--lf-accent-ink:#fff;--lf-field:var(--tint);--lf-radius:22px;--lf-head:var(--display);--logo-radius:14px;--logo-line:var(--line);
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --blue:#2B4FE0;--blue-deep:#0A1550;--sky:#1A2550;--bg:#070B1F;--tint:#0E1430;--ink:#EEF1FF;--ink-2:#A6B0D6;--line:#232D58;color-scheme:dark}}
-:root[data-theme="dark"]{--blue:#2B4FE0;--blue-deep:#0A1550;--sky:#1A2550;--bg:#070B1F;--tint:#0E1430;--ink:#EEF1FF;--ink-2:#A6B0D6;--line:#232D58;color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -242,11 +240,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @keyframes belt{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.logo-marquee .logo-belt{animation:none;flex-wrap:wrap;width:auto}}
 
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
-</style>
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:
 </head>
 <body>
-
+auto}}
+</style>
 
 <div class="top">
   <nav>
