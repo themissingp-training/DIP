@@ -197,6 +197,14 @@ h1 .thin,h2 .thin{font-weight:500;display:block;font-size:.5em;letter-spacing:.0
 .gallery button:hover img{transform:scale(1.05)}
 .phone{border-radius:26px;padding:8px;background:var(--ink);box-shadow:0 24px 50px -20px rgba(22,35,59,.5)}
 .phone video{width:100%;border-radius:20px;aspect-ratio:9/16;object-fit:cover;background:#000;display:block}
+.ba{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center;margin-top:20px}
+.ba h3{margin:0;font-size:clamp(22px,2.6vw,30px);line-height:1.15}
+.ba .sub{margin:10px 0 0}
+.ba-keys{display:grid;gap:10px;margin:18px 0 0;padding:0;list-style:none}
+.ba-keys li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:12px;align-items:start;font-size:15px}
+.ba-keys b{font-size:11px;letter-spacing:.12em;text-transform:uppercase;border-radius:6px;padding:4px 8px;text-align:center}
+.ba-keys .d1{background:#e7e9ee;color:#4a5263}.ba-keys .d2{background:var(--blue);color:#fff}
+@media (max-width:900px){.ba{grid-template-columns:1fr}.ba .phone{max-width:300px}}
 .phone-cap{margin-top:10px;font-size:14px;color:var(--muted)}
 .methods{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
 .methods span{font-size:14px;font-weight:600;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
@@ -536,6 +544,21 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
       </div>
     </div>
 
+    <div class="panel ba" id="baPanel">
+      <div>
+        <div class="phone"><video src="vid/before-after.mp4" poster="img/before-after-poster.jpg" muted loop playsinline preload="metadata" id="baVid"></video></div>
+        <p class="phone-cap">Tap to play with sound.</p>
+      </div>
+      <div>
+        <h3>See the change for yourself</h3>
+        <p class="sub">The same participants, filmed on Day 1 and again on Day 2. Watch how their body language, energy and presentation style change in just two days.</p>
+        <ul class="ba-keys">
+          <li><b class="d1">Day 1</b><span>Bottom half, in black and white: hands held still, arms crossed, eyes searching for the next line.</span></li>
+          <li><b class="d2">Day 2</b><span>Top half, in colour: open gestures, steady eye contact and a confident, natural voice.</span></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="panel" id="dumbPanel">
       <h3>Every participant moved up</h3>
       <p class="sub">Pre- and post-workshop self-assessment scores, out of 100.</p>
@@ -713,6 +736,7 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
     if(!fromHash){ try{ history.replaceState(null,'','#'+scenes[i].dataset.name); }catch(e){} }
     if(scenes[i].id==='s-results') setTimeout(animateResults,250);
     var rv=document.getElementById('roomVid'); if(scenes[i].id==='s-room'){ rv.play&&rv.play().catch(function(){}); } else { rv.pause(); }
+    var bv2=document.getElementById('baVid'); if(scenes[i].id==='s-results'){ bv2.play&&bv2.play().catch(function(){}); } else { bv2.pause(); }
   }
   tabs.forEach(function(b,k){ b.addEventListener('click',function(){ go(k); }); });
   document.querySelectorAll('[data-go]').forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); go(+b.dataset.go); }); });
@@ -803,6 +827,8 @@ body.anim #s-overview .rig{animation:drop 1.1s cubic-bezier(.3,1.3,.5,1) 1.6s bo
   document.querySelectorAll('#gallery button').forEach(function(b){ b.addEventListener('click',function(){
     var im=b.querySelector('img'), n=document.createElement('img'); n.src=im.src; n.alt=im.alt; openM(n,im.alt);
   }); });
+  var bv=document.getElementById('baVid');
+  bv.addEventListener('click',function(){ bv.muted=!bv.muted; bv.play().catch(function(){}); });
   var rv=document.getElementById('roomVid');
   rv.addEventListener('click',function(){ rv.muted=!rv.muted; rv.play().catch(function(){}); });
 
