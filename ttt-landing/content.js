@@ -36,7 +36,7 @@ window.CONTENT = {
     subtitle: "Your people practise on camera, get coached one by one, and leave with a ready-to-use toolkit. We score them before and after, so you can show management what changed.",
     button:   "Book a free discovery call",
     button2:  "See the results",
-    photo:    "assets/img/usman-stage.jpg",
+    photo:    "assets/img/usman-hero.jpg",
     cardBig:  "+44%",
     cardText: "pre → post score, Customer Service TTT",
     chipBig:  "98%",
@@ -106,7 +106,7 @@ window.CONTENT = {
   agendaTitle: "Inside the two days",
   agendaText:  "Day 1 builds the toolkit. Day 2 puts it on stage. Tap a module to see what's covered.",
   agenda: [
-    { day: 1, time: "09:10 – 10:45", name: "Setting the Stage", points: ["Objective and norm setting", "Each participant records a first-take video", "What great training looks like"], result: "A baseline for every participant.", photo: "assets/img/usman-stage.jpg" },
+    { day: 1, time: "09:10 – 10:45", name: "Setting the Stage", points: ["Objective and norm setting", "Each participant records a first-take video", "What great training looks like"], result: "A baseline for every participant.", photo: "assets/img/usman-session.jpg" },
     { day: 1, time: "11:00 – 13:00", name: "The Pre-requisites", points: ["Expressed and unexpressed needs of learners", "Administrator, trainer and facilitator", "Connecting in the first few seconds", "The first 20% of a session"], result: "Trainers start from the learner, not the slides.", photo: "assets/img/usman-coaching.jpg" },
     { day: 1, time: "14:00 – 15:45", name: "Training Design", points: ["Structuring content with clarity", "Templates for short and full-day sessions", "Specific purpose and central idea", "Objectives, assessments and evaluation forms"], result: "A session plan they can reuse for any topic.", photo: "assets/img/group-flipchart.jpg" },
     { day: 1, time: "16:00 – 17:30", name: "The Art of Engagement", points: ["Start with a bang: the STAR hook", "Gap theory and WIIFM", "PACE Elements", "Learning with fun, without losing seriousness"], result: "Openings that win the room in the first minute.", photo: "assets/img/ttt-room-1.jpg" },

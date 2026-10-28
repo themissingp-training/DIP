@@ -379,3 +379,14 @@ legend small{font-weight:600;color:var(--muted);margin-left:4px}
 .d2{transform:translate(48%,-34%) rotate(5deg)}
 .d3{transform:translate(-46%,40%) rotate(4deg)}
 .d4{transform:translate(50%,36%) rotate(-4deg)}
+
+/* round 2: footer, photos */
+.foot{background:#fff;color:var(--muted);padding-block:26px 96px;border-top:1px solid var(--line)}
+.foot .copy{margin:0;padding:0;border:0;text-align:center;font-size:.88rem}
+@media(min-width:900px){.foot{padding-block:26px}}
+.hero-frame{aspect-ratio:4/3.4;border-radius:28px 28px 28px 110px}
+.hero-frame img{object-position:50% 30%}
+.hero-media{max-width:580px}
+.prog-img{aspect-ratio:16/10}
+.prog-img img{object-position:50% 40%}
+.programs .prog:nth-child(1) .prog-img img{object-position:50% 55%}
