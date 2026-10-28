@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Train the Trainer | The Missing P</title>
+<meta name="description" content="Train the Trainer: a two-day experiential workshop by The Missing P, led by Usman Gulzari. +44% pre to post scores, delivered for Faysal Bank, Engro, Nayatel and PIPS.">
+<meta property="og:title" content="Train the Trainer | The Missing P">
+<meta property="og:description" content="Your experts know it. Now they'll teach it. Two days, measured before and after.">
+<meta property="og:image" content="assets/img/usman-stage.jpg">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/logos/tmp-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="base.css">
+<style>
+/* DESIGN 3 · BOLD */
+/* fonts: family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700 */
+/* Bold: full-photo hero with a dark overlay, charcoal and white bands, vivid orange for every action. Event-poster energy, sharp corners. */
+:root{
+  --bg:#FFFFFF; --ink:#14161B; --muted:#5A606B; --line:#E4E5E8; --tint:#F5F5F3;
+  --brand:#F2600C; --on-brand:#fff; --accent:#FFB020; --accent2:#F2600C;
+  --dark:#14161B; --on-dark:#fff; --on-dark-2:#B4B8C0;
+  --radius:6px; --radius-sm:4px;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Barlow","Segoe UI",Arial,sans-serif;
+}
+h1,h2,h3{text-transform:uppercase;letter-spacing:.005em}
+h1{font-weight:800;font-size:clamp(3rem,8vw,5.6rem);line-height:.95}
+h2{font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1}
+h3{font-weight:700;font-size:1.4rem;letter-spacing:.01em}
+.btn{border-radius:4px;text-transform:uppercase;letter-spacing:.06em;font-size:.95rem}
+.btn.ghost{color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
+.top{background:var(--dark);border:0}
+body::before{background:var(--dark)}
+.top .logo-link{background:#fff;padding:5px 9px;border-radius:3px}
+.top .logo-link img{height:28px}
+.nav a{color:#C3C6CC;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem}.nav a:hover{color:#fff}
+
+.s-hero{position:relative;color:#fff;padding-block:84px 64px;background:linear-gradient(90deg,rgba(20,22,27,.94) 0%,rgba(20,22,27,.78) 45%,rgba(20,22,27,.45) 100%),url("assets/img/big-hall.jpg") center/cover no-repeat}
+.s-hero .eyebrow{color:var(--accent)}
+.h1b{color:var(--brand)}
+.sub{color:#D5D8DD}
+.hero-media{grid-template-columns:1fr;grid-template-rows:auto;max-width:420px}
+.hero-photo{grid-row:auto;aspect-ratio:4/5;min-height:0;border-radius:4px;border:6px solid #fff;transform:rotate(2deg);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.hero-small{display:none}
+.hero-badge{background:var(--brand);color:#fff;font-family:var(--f-display);font-size:1.4rem;text-transform:uppercase;border-radius:3px;left:-22px;bottom:40px}
+.stat{background:rgba(255,255,255,.07);border-left:4px solid var(--brand);border-radius:0;backdrop-filter:blur(4px)}
+.stat strong{color:#fff;font-size:clamp(2.2rem,4.4vw,3rem)}
+.stat span{color:#D5D8DD}
+@media(max-width:560px){.hero-media{max-width:300px}.hero-photo{grid-column:auto}.hero-badge{left:-8px;top:auto;bottom:20px}}
+
+.eyebrow{color:var(--brand);letter-spacing:.18em}
+.s-logos{background:var(--tint);border:0}
+.s-problem{background:#fff}
+.shifts{border-radius:4px}
+.to-arr{color:var(--brand)}
+.s-video{background:var(--dark);color:#fff}
+.s-video .lede{color:var(--on-dark-2)}
+.loop li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#E7E8EB}
+.loop b{color:var(--accent);text-transform:uppercase;font-size:1.3rem}
+.chip{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#fff}
+.chip small{color:var(--on-dark-2)}
+.yt-play{border-radius:4px;background:var(--brand)}
+.mk{background:var(--ink);color:#fff;border-radius:3px;font-size:1.3rem}
+.why-item{border-left:4px solid var(--brand);border-radius:4px}
+.s-results{background:var(--brand);color:#fff}
+.s-results .eyebrow{color:#1B0E05}
+.s-results .lede{color:#FFE6D5}
+.callout{background:rgba(0,0,0,.14);border-color:rgba(255,255,255,.25)}
+.callout strong{color:#fff;font-size:2.4rem}
+.callout span{color:#FFE6D5}
+.dot.a,.lg-a::before{background:var(--ink)}
+.seg{background:var(--ink);opacity:.25}
+.badge{background:var(--brand);color:#fff;font-size:2rem;border-radius:3px}
+.tags span{background:var(--tint);color:var(--ink)}
+.s-voices{background:#fff}
+.q{border-radius:4px;background:var(--tint);border:0}
+.q blockquote::before{color:var(--brand)}
+.q.feature{background:var(--dark);color:#fff}
+.q.feature blockquote::before{color:var(--brand)}
+.av{background:var(--brand);color:#fff;border-radius:3px}
+.s-days{background:var(--tint)}
+.daytabs{border-radius:4px;background:#fff;border:1px solid var(--line)}
+.daytabs button{border-radius:3px;text-transform:uppercase;letter-spacing:.04em}
+.mn{border-radius:3px}
+.m-result{border-left:4px solid var(--brand);border-radius:0 4px 4px 0}
+.outcomes li::before{border-radius:3px}
+.s-tracks{background:#fff}
+.track .for{color:var(--brand)}
+.kit{border-radius:4px}
+.kit .eyebrow{color:var(--accent)}
+.s-trainer{background:var(--tint)}
+.t-photo img{border-radius:4px;border:6px solid #fff;box-shadow:0 20px 40px -20px rgba(0,0,0,.4)}
+.tstats div{border-top-color:var(--brand)}
+.s-plan{background:var(--dark)}
+#plan-copy .eyebrow{color:var(--accent)}
+.promises li::before{background:var(--brand);color:#fff;border-radius:3px}
+#leadbox{border-radius:6px;border-top:6px solid var(--brand)}
+.pills span{border-radius:4px}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo-link" href="#hero" aria-label="The Missing P"><img src="assets/logos/tmp-logo.png" alt="The Missing P"></a>
+<nav class="nav" aria-label="Sections"><a href="#results-sec">Results</a><a href="#work">Programs</a><a href="#days">The two days</a><a href="#trainer-sec">Trainer</a></nav>
+<a class="btn" href="#plan">Plan your TTT</a></div></header>
+<main>
+  <section class="s-hero"><div class="wrap"><div id="hero"></div><div id="proof"></div></div></section>
+  <section class="s-logos"><div class="wrap" id="logos"></div></section>
+  <section class="s-problem"><div class="wrap" id="problem"></div></section>
+  <section class="s-video"><div class="wrap" id="video"></div></section>
+  <section class="s-why"><div class="wrap" id="why"></div></section>
+  <section class="s-results" id="results-sec"><div class="wrap" id="results"></div></section>
+  <section class="s-portfolio" id="work"><div class="wrap" id="portfolio"></div></section>
+  <section class="s-voices"><div class="wrap" id="voices"></div></section>
+  <section class="s-days" id="days"><div class="wrap" id="agenda"></div></section>
+  <section class="s-tracks"><div class="wrap" id="tracks"></div></section>
+  <section class="s-trainer" id="trainer-sec"><div class="wrap" id="trainer"></div></section>
+  <section class="s-plan" id="plan"><div class="wrap plan-grid"><div id="plan-copy"></div><div id="leadbox"></div></div></section>
+</main>
+<footer><div class="wrap"><img src="assets/logos/tmp-logo.png" alt="The Missing P"><p id="foot-text"></p><a class="btn" href="#plan">Plan your TTT <span class="arr" aria-hidden="true">→</span></a></div></footer>
+<div class="sticky" id="sticky"><p><b>Train the Trainer</b>Get a plan for your trainers in 1 min</p><a class="btn" href="#plan">Plan my TTT</a></div>
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

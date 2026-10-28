@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Train the Trainer · Pick a design</title>
+<link rel="icon" href="assets/logos/tmp-logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&family=Poppins:wght@700&family=Barlow+Condensed:wght@800&display=swap">
+<style>
+:root{--bg:#F4F6FA;--ink:#14213D;--muted:#5A6684;--line:#DDE3EE;--blue:#1F80E6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Open Sans",Arial,sans-serif}
+.wrap{max-width:1120px;margin:0 auto;padding:40px max(18px,env(safe-area-inset-left,0px)) 64px}
+.logo{height:38px;width:auto}
+h1{font:800 clamp(28px,4vw,42px)/1.15 Montserrat,Arial,sans-serif;margin:26px 0 10px;letter-spacing:-.02em}
+p.lede{color:var(--muted);max-width:62ch;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px}
+a.card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+a.card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(20,33,61,.45)}
+.sw{height:170px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px}
+.sw b{font-size:26px;line-height:1.05}
+.dots{display:flex;gap:6px}.dots i{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.7)}
+.d1 .sw{background:linear-gradient(160deg,#0B1F3A,#14396B);color:#fff}.d1 .sw b{font-family:Montserrat,Arial,sans-serif;font-weight:800}.d1 .sw b span{color:#E9A63A}
+.d2 .sw{background:radial-gradient(400px 200px at 90% 0%,#DCEBFC,#fff 70%);color:#0D1626;border-bottom:1px solid var(--line)}.d2 .sw b{font-family:Poppins,Arial,sans-serif}.d2 .sw b span{color:#1F80E6}.d2 .dots i{border-color:#fff;box-shadow:0 0 0 1px var(--line)}
+.d3 .sw{background:linear-gradient(90deg,rgba(20,22,27,.92),rgba(20,22,27,.6)),url(assets/img/big-hall.jpg) center/cover;color:#fff}.d3 .sw b{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:800;text-transform:uppercase;font-size:32px}.d3 .sw b span{color:#F2600C}
+.body{padding:20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tag{font:700 12px Montserrat,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+h2{font:700 20px Montserrat,Arial,sans-serif;margin:0}
+.body p{margin:0;color:var(--muted);font-size:15px}
+.go{margin-top:auto;padding-top:12px;font-weight:700;color:var(--blue)}
+.note{margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;color:var(--muted);font-size:15px}
+.note b{color:var(--ink)}
+@media (max-width:880px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="logo" src="assets/logos/tmp-logo.png" alt="The Missing P">
+  <h1>Train the Trainer landing page: pick a design</h1>
+  <p class="lede">All three have the same sections as our Retreat page: results, client logos, video, past programs, participant feedback, the two-day agenda, trainer profile and the enquiry form with Calendly. Only the look changes. Open each one on your phone and laptop, then tell Aniqa which one should go live.</p>
+  <div class="grid">
+    <a class="card d1" href="design-1.html"><div class="sw"><span class="dots"><i style="background:#14396B"></i><i style="background:#E9A63A"></i><i style="background:#fff"></i></span><b>Your experts know it. <span>Now they'll teach it.</span></b></div><div class="body"><span class="tag">Design 1 · Executive</span><h2>Navy and gold</h2><p>Calm, corporate and premium, like a consulting firm. Suits banks and senior HR buyers.</p><span class="go">Open design 1 →</span></div></a>
+    <a class="card d2" href="design-2.html"><div class="sw"><span class="dots"><i style="background:#1F80E6"></i><i style="background:#FFC22E"></i><i style="background:#FF6447"></i></span><b>Your experts know it. <span>Now they'll teach it.</span></b></div><div class="body"><span class="tag">Design 2 · Bright</span><h2>TMP blue, yellow and coral</h2><p>Light, friendly and colourful. The closest sister to the Retreat page.</p><span class="go">Open design 2 →</span></div></a>
+    <a class="card d3" href="design-3.html"><div class="sw"><span class="dots"><i style="background:#14161B"></i><i style="background:#F2600C"></i><i style="background:#fff"></i></span><b>Your experts know it. <span>Now they'll teach it.</span></b></div><div class="body"><span class="tag">Design 3 · Bold</span><h2>Charcoal and orange</h2><p>Full-photo hero and strong headlines. High energy, like an event poster.</p><span class="go">Open design 3 →</span></div></a>
+  </div>
+  <p class="note"><b>Note for reviewers:</b> the enquiry form at the bottom works as a demo and opens the TMP Calendly calendar after the last step. Entries are not saved yet. Jotform and a leads sheet will be connected after we choose.</p>
+</div>
+</body>
+</html>
