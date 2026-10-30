@@ -139,3 +139,7 @@ details[open] .pm{background:var(--navy)}
 /* footer */
 .foot{background:var(--navy);color:#B8C4D8;border-top:0}
 .sticky .btn{background:var(--gold);color:#1A1204}
+
+/* keep navy headline size as before */
+h1{font-size:clamp(2.3rem,5vw,3.75rem);line-height:1.1}
+.h1b{font-size:1em;line-height:inherit;margin-top:4px}

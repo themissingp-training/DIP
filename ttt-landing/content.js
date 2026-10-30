@@ -30,10 +30,10 @@ window.CONTENT = {
 
   /* ---------- 1. HERO: the result they want + without what they fear ---------- */
   hero: {
-    eyebrow:  "Train the Trainer · 2-day hands-on workshop",
-    titleA:   "Turn your experts into trainers people learn from,",
-    titleB:   "without another session nobody remembers.",
-    subtitle: "Your people practise on camera, get coached one by one, and leave with a ready-to-use toolkit. We score them before and after, so you can show management what changed.",
+    eyebrow:  "Train the Trainer · Facilitation & Engagement Tools",
+    titleA:   "Subject knowledge alone doesn't make a great trainer.",
+    titleB:   "Design & deliver training people understand, engage with and apply.",
+    subtitle: "Your trainers have deep expertise. The real challenge is translating it into learning others can easily understand, engage with and apply. This 2-day experiential workshop turns content into engaging learning that improves attention, retention, participation and application.",
     button:   "Book a free discovery call",
     button2:  "See the results",
     photo:    "assets/img/usman-hero.jpg",
@@ -78,9 +78,9 @@ window.CONTENT = {
     title:   "Your experts know the subject. The room still switches off.",
     pains: [
       { title: "Slides get read out loud", text: "Dense decks and long monologues. Half the room is on their phones within ten minutes." },
-      { title: "New trainers wing it",     text: "No structure, no objectives, no plan for when questions or pushback come." },
-      { title: "Every trainer, a different standard", text: "The same topic gets taught five different ways across teams and cities." },
-      { title: "Nothing to show management", text: "Sessions happen, but nobody can prove what changed afterwards." }
+      { title: "No engagement",            text: "One-way lectures and silent rooms. Participants sit through the session but never really take part." },
+      { title: "Low retention",            text: "Complex concepts aren't simplified, so most of the session is forgotten within days." },
+      { title: "No transfer to the job",   text: "People nod along in the room, then go back and work exactly the way they did before." }
     ],
     costTitle: "The real cost",
     cost: "Every session that doesn't land costs you twice: the hours of everyone in the room, and the mistakes that keep happening because the knowledge never reached the job.",

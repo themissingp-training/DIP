@@ -390,3 +390,7 @@ legend small{font-weight:600;color:var(--muted);margin-left:4px}
 .prog-img{aspect-ratio:16/10}
 .prog-img img{object-position:50% 40%}
 .programs .prog:nth-child(1) .prog-img img{object-position:50% 55%}
+
+/* round 3: longer proposal headline (blue version) */
+h1{font-size:clamp(2rem,3.7vw,2.85rem);line-height:1.15}
+.h1b{font-size:.82em;line-height:1.2;margin-top:10px}
